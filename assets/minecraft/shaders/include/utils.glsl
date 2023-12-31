@@ -65,7 +65,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 
 	if(adjacentCheck(inputAlpha, 255.0)) {        // GUI O | FirstPerson O | ThirdPerson O | Emssive X
 		// Default
-	} else if(adjacentCheck(inputAlpha, 254.0)) { // GUI O | FirstPerson O | ThirdPerson O | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 254.0)) { // GUI O | FirstPerson O | ThirdPerson O | Emssive O
 		if(isGui == 1) {
 			remappingColor = inputColor;
 			remappingColor.a = 1.0;
@@ -73,7 +74,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			remappingColor = inputColor;
 			remappingColor.a = 1.0;
 		}
-	} else if(adjacentCheck(inputAlpha, 253.0)) { // GUI O | FirstPerson O | ThirdPerson X | Emssive X
+	} else
+	if(adjacentCheck(inputAlpha, 253.0)) { // GUI O | FirstPerson O | ThirdPerson X | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
 		} else {
@@ -87,7 +89,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 0.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 252.0)) { // GUI O | FirstPerson O | ThirdPerson X | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 252.0)) { // GUI O | FirstPerson O | ThirdPerson X | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
 		} else {
@@ -102,7 +105,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 0.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 251.0)) { // GUI O | FirstPerson X | ThirdPerson O | Emssive X
+	} else
+	if(adjacentCheck(inputAlpha, 251.0)) { // GUI O | FirstPerson X | ThirdPerson O | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
 		} else {
@@ -116,7 +120,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 1.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 250.0)) { // GUI O | FirstPerson X | ThirdPerson O | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 250.0)) { // GUI O | FirstPerson X | ThirdPerson O | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
 		} else {
@@ -132,20 +137,23 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 1.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 249.0)) { // GUI X | FirstPerson O | ThirdPerson O | Emssive X
+	} else
+	if(adjacentCheck(inputAlpha, 249.0)) { // GUI X | FirstPerson O | ThirdPerson O | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
 			remappingColor.a = 1.0;
 		}
-	} else if(adjacentCheck(inputAlpha, 248.0)) {	// GUI X | FirstPerson O | ThirdPerson O | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 248.0)) {	// GUI X | FirstPerson O | ThirdPerson O | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
 			remappingColor = inputColor;
 			remappingColor.a = 1.0;
 		}
-	} else if(adjacentCheck(inputAlpha, 247.0)) {	// GUI X | FirstPerson O | ThirdPerson X | Emssive X
+	} else
+	if(adjacentCheck(inputAlpha, 247.0)) {	// GUI X | FirstPerson O | ThirdPerson X | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
@@ -159,7 +167,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 0.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 246.0)) {	// GUI X | FirstPerson O | ThirdPerson X | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 246.0)) {	// GUI X | FirstPerson O | ThirdPerson X | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
@@ -174,7 +183,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 0.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 245.0)) {	// GUI X | FirstPerson X | ThirdPerson O | Emssive X
+	} else
+	if(adjacentCheck(inputAlpha, 245.0)) {	// GUI X | FirstPerson X | ThirdPerson O | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
@@ -188,7 +198,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 1.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 244.0)) {	// GUI X | FirstPerson X | ThirdPerson O | Emssive O
+	} else
+	if(adjacentCheck(inputAlpha, 244.0)) {	// GUI X | FirstPerson X | ThirdPerson O | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
@@ -204,11 +215,28 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 1.0;
 			}
 		}
-	} else if(adjacentCheck(inputAlpha, 1.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive - (only GUI don't need Emssive setting)
+	} else
+	if(adjacentCheck(inputAlpha, 1.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
 		} else {
 			remappingColor.a = 0.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 2.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive O
+		if(isGui == 1) {
+			remappingColor.a = 1.0;
+			remappingColor = inputColor;
+		} else {
+			remappingColor.a = 0.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 243.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive - (only GUI don't need Emssive setting)
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0.0;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 2;
 		}
 	}// else if(adjacentCheck(inputAlpha, 242.0)) { // 야광
 	//	if(isGui == 1) {
