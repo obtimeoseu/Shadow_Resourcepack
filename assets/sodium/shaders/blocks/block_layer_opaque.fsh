@@ -25,9 +25,9 @@ vec4 showRedAndGray(vec4 color, vec4 fogColor, vec3 lightColor) {
         return color;
     }
 
-    if(lightColor.r > 0.85) {
-        return color;
-    }
+    //if(lightColor.r > 0.85) {
+    //    return color;
+    //}
 
     if(
         (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
@@ -45,9 +45,9 @@ vec3 showRedAndGray(vec3 color, vec4 fogColor, vec3 lightColor) {
         return color;
     }
 
-    if(lightColor.r > 0.85) {
-        return color;
-    }
+    //if(lightColor.r > 0.85) {
+    //    return color;
+    //}
 
     if(
         (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||

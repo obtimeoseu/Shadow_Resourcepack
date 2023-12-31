@@ -12,6 +12,7 @@ uniform vec4 FogColor;
 
 in float vertexDistance;
 in vec4 vertexColor;
+in vec4 lightMapColor;
 in vec2 texCoord0;
 in vec2 texCoord1;
 in vec4 normal;
@@ -29,7 +30,7 @@ out vec4 fragColor;
 void main() {
 	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
     vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui) * showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
-    color = apply_emissive_perspective_for_item(color, vec4(1.0), tintColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha);
+    color = apply_emissive_perspective_for_item(color, lightMapColor, tintColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha);
     if (color.a < 0.1) {
         discard;
     }
