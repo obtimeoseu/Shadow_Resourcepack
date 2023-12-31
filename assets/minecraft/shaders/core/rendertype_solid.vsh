@@ -23,6 +23,7 @@ out vec4 normal;
 
 out float zPos;
 flat out int isGui;
+out vec4 tintColor;
 
 void main() {
     zPos = Position.z;
@@ -34,6 +35,8 @@ void main() {
             isGui = 2; // gui doll
         }
     }
+    tintColor = Color;
+    
     vec3 pos = Position + ChunkOffset;
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
 

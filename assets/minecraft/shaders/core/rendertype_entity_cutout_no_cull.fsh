@@ -19,10 +19,13 @@ in vec4 normal;
 
 in float zPos;
 flat in int isGui;
+in vec4 tintColor;
 
 out vec4 fragColor;
 
+// 엔티티
 void main() {
+	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
     vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
     if (color.a < 0.1) {
         discard;

@@ -27,6 +27,7 @@ out vec4 normal;
 
 out float zPos;
 flat out int isGui;
+out vec4 tintColor;
 
 void main() {
     zPos = Position.z;
@@ -38,6 +39,8 @@ void main() {
             isGui = 2; // gui doll
         }
     }
+    tintColor = Color;
+    
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
     vertexDistance = fog_distance(ModelViewMat, Position, FogShape);
