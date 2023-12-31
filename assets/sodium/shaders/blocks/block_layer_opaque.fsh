@@ -20,31 +20,51 @@ uniform float u_FogEnd; // The ending position of the shader fog
 
 out vec4 out_FragColor; // The output fragment for the color framebuffer
 
-vec4 showRedAndGray(vec4 color) {
+vec4 showRedAndGray(vec4 color, vec4 fogColor, vec3 lightColor) {
+    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
+        return color;
+    }
+
+    if(lightColor.r > 0.85) {
+        return color;
+    }
+
     if(
-        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) || // 밝은 빨강 (조건 여유)
-        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15) //어두운 빨강 (조건 빡셈)
+        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
+        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
     ) {
         return color;
-    } else {
-        float gray = (color.r + color.g + color.b) / 3;
-        color.rgb = vec3(gray);
-        return color;
     }
+
+    float gray = (color.r + color.g + color.b) / 3;
+    color.rgb = vec3(gray);
+    return color;
 }
-vec3 showRedAndGray(vec3 color) {
-    if(color.g < 0.275 && color.b < 0.275 && color.r > 0.35) {
-        return color;
-    } else {
-        float gray = (color.r + color.g + color.b) / 3;
-        color.rgb = vec3(gray);
+vec3 showRedAndGray(vec3 color, vec4 fogColor, vec3 lightColor) {
+    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
         return color;
     }
+
+    if(lightColor.r > 0.85) {
+        return color;
+    }
+
+    if(
+        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
+        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
+    ) {
+        return color;
+    }
+
+    float gray = (color.r + color.g + color.b) / 3;
+    color.rgb = vec3(gray);
+    return color;
 }
 
 void main() {
-    vec4 diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias));
-    vec3 tintColor = showRedAndGray(v_Vertcolor);
+    vec4 fogColor = u_FogColor;
+    vec4 diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor, v_Lightcolor);
+    vec3 tintColor = showRedAndGray(v_Vertcolor, fogColor, v_Lightcolor);
 
 
 #ifdef USE_FRAGMENT_DISCARD
