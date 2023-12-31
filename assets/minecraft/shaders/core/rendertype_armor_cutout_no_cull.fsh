@@ -16,10 +16,13 @@ in vec2 texCoord0;
 in vec2 texCoord1;
 in vec4 normal;
 
+in float zPos;
+flat in int isGui;
+
 out vec4 fragColor;
 
 void main() {
-    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor) * showRedAndGray(vertexColor, FogColor) * ColorModulator;
+    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui) * showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     if (color.a < 0.1) {
         discard;
     }
