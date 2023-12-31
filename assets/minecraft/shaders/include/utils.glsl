@@ -221,16 +221,20 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	return remappingColor;
 }
 
-vec4 showRedAndGray(vec4 color, vec4 fogColor) {
+vec4 showRedAndGray(vec4 color, vec4 fogColor, int isGui) {
+		if(isGui > 0) {
+			return color;
+		}
+
     if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
-        return color;
+			return color;
     }
 
     if(
-        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
-        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
+			(color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
+			(color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
     ) {
-        return color;
+			return color;
     }
 
     float gray = (color.r + color.g + color.b) / 3;
@@ -238,16 +242,20 @@ vec4 showRedAndGray(vec4 color, vec4 fogColor) {
     return color;
 }
 
-vec3 showRedAndGray(vec3 color, vec4 fogColor) {
+vec3 showRedAndGray(vec3 color, vec4 fogColor, int isGui) {
+		if(isGui > 0) {
+			return color;
+		}
+
     if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
-        return color;
+			return color;
     }
 
     if(
-        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
-        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
+			(color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
+			(color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
     ) {
-        return color;
+			return color;
     }
 
     float gray = (color.r + color.g + color.b) / 3;

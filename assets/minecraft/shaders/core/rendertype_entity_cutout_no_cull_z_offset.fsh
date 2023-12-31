@@ -17,14 +17,17 @@ in vec4 overlayColor;
 in vec2 texCoord0;
 in vec4 normal;
 
+in float zPos;
+flat in int isGui;
+
 out vec4 fragColor;
 
 void main() {
-    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor);
+    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
     if (color.a < 0.1) {
         discard;
     }
-    color *= showRedAndGray(vertexColor, FogColor) * ColorModulator;
+    color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
     color *= lightMapColor;
     fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);

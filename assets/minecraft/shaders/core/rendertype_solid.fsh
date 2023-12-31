@@ -15,9 +15,12 @@ in vec4 vertexColor;
 in vec2 texCoord0;
 in vec4 normal;
 
+in float zPos;
+flat in int isGui;
+
 out vec4 fragColor;
 
 void main() {
-    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor) * showRedAndGray(vertexColor, FogColor) * ColorModulator;
+    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui) * showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
 }

@@ -24,7 +24,19 @@ out vec4 vertexColor;
 out vec2 texCoord0;
 out vec4 normal;
 
+out float zPos;
+flat out int isGui;
+
 void main() {
+    zPos = Position.z;
+    isGui = 0;
+    if(abs(ProjMat[3][3] - 1.0) < 0.01) {
+        if(zPos > 125.0) {
+            isGui = 1; // 일반 gui
+        } else {
+            isGui = 2; // gui doll
+        }
+    }
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
