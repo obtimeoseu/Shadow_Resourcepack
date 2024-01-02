@@ -38,8 +38,6 @@ void main() {
     vertexDistance = length((ModelViewMat * vec4(Position, 1.0)).xyz);
 
     color = ColorModulator;
-    color.g = 0.0;
-    //b *= vec3(1.0, 0.0, 1.0);
 
     if(vertexDistance >= 100 && vertexDistance <= 100.5)
         color = vec4(COLORS[(gl_VertexID / 4) % 16] * 2, (ColorModulator.a - 0.2) * 3.0);
