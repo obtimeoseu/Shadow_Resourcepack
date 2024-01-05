@@ -2,7 +2,7 @@
 	"credit": "옵티머스",
 	"texture_size": [128, 128],
 	"textures": {
-		"1": "custom:furniture/ruins_beacon"
+		"1": "shadow:furniture/ruins_beacon"
 	},
 	"elements": [
 		{
