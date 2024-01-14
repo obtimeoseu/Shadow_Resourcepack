@@ -216,6 +216,14 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			}
 		}
 	} else
+	if(adjacentCheck(inputAlpha, 243.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive - (only GUI don't need Emssive setting)
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0.0;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 2;
+		}
+	} else
 	if(adjacentCheck(inputAlpha, 1.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive X
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
@@ -229,14 +237,6 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			remappingColor = inputColor;
 		} else {
 			remappingColor.a = 0.0;
-		}
-	} else
-	if(adjacentCheck(inputAlpha, 243.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive - (only GUI don't need Emssive setting)
-		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
-
-		remappingColor.a = 0.0;
-		if(grayScaleLight > 0.5) {
-			remappingColor.a = (grayScaleLight - 0.5) * 2;
 		}
 	}// else if(adjacentCheck(inputAlpha, 242.0)) { // 야광
 	//	if(isGui == 1) {
