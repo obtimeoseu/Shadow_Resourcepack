@@ -1,14 +1,1 @@
-{
-    "sources": [
-        {
-            "type": "directory",
-            "source": "furniture",
-            "prefix": "furniture/"
-        },
-        {
-            "type": "directory",
-            "source": "entity",
-            "prefix": "entity/"
-        }
-    ]
-}
+{"sources":[{"source":"entity","prefix":"entity/","type":"directory"}]}
