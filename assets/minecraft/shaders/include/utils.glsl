@@ -219,9 +219,9 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	if(adjacentCheck(inputAlpha, 243.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive - (only GUI don't need Emssive setting)
 		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
 
-		remappingColor.a = 0.333;
+		remappingColor.a = 0.275;
 		if(grayScaleLight > 0.5) {
-			remappingColor.a = (grayScaleLight - 0.5) * 3 + 0.333;
+			remappingColor.a = (grayScaleLight - 0.5) * 3 + 0.275;
 			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
 	} else

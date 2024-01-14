@@ -4,9 +4,9 @@
 #define MINECRAFT_AMBIENT_LIGHT (0.4)
 
 vec4 getDarkerLight(vec4 color) {
-    color.r = pow(color.r, 1.3);
-    color.g = pow(color.g, 1.5);
-    color.b = pow(color.b, 1.5);
+    color.r = pow(color.r, 1.0) - 0.05;
+    color.g = pow(color.g, 1.1) - 0.065;
+    color.b = pow(color.b, 1.1) - 0.065;
     return color;
 }
 
