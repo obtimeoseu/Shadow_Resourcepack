@@ -1,0 +1,7 @@
+{
+	"credit": "옵티머스",
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "shadow:item/shadow_compass_10"
+	}
+}
