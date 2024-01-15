@@ -1,1 +1,29 @@
-{"sources":[{"source":"entity","prefix":"entity/","type":"directory"}]}
+{
+    "sources": [
+        {
+            "type": "directory",
+            "source": "entity",
+            "prefix": "entity/"
+        },
+        {
+            "type": "directory",
+            "source": "cosmetic",
+            "prefix": "cosmetic/"
+        },
+        {
+            "type": "directory",
+            "source": "furniture",
+            "prefix": "furniture/"
+        },
+        {
+            "type": "directory",
+            "source": "item",
+            "prefix": "item/"
+        },
+        {
+            "type": "directory",
+            "source": "shadow",
+            "prefix": "shadow/"
+        }
+    ]
+}

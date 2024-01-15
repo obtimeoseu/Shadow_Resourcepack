@@ -1,0 +1,7 @@
+{
+	"credit": "옵티머스",
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "daily:onlydown/shadow_walkie_talkie_on_3"
+	}
+}

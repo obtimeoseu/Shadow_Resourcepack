@@ -1,0 +1,29 @@
+{
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "item/flower_banner_pattern"
+	},
+	"overrides": [
+        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/shadow_sensor_off"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/shadow_sensor_on"},
+        { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/shadow_walkie_talkie_off"},
+        { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/shadow_walkie_talkie_on_0"},
+        { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/shadow_walkie_talkie_on_1"},
+        { "predicate": { "custom_model_data": 1005}, "model": "shadow:item/shadow_walkie_talkie_on_2"},
+        { "predicate": { "custom_model_data": 1006}, "model": "shadow:item/shadow_walkie_talkie_on_3"},
+        { "predicate": { "custom_model_data": 1007}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1008}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1011}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1012}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1013}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1014}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1015}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1016}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1017}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1018}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1019}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1020}, "model": "shadow:item/"}
+	]
+}
