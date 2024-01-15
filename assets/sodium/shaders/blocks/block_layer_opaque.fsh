@@ -112,15 +112,15 @@ void main() {
     if(fogColor.g == 0 && fogColor.b == 0) {
         if(fogColor.r * 255 < 1) {
             fogStart = 0.0;
-            fogEnd = 25.0;
+            fogEnd = 20.0;
         } else
         if(fogColor.r * 255 < 2) {
             fogStart = 0.0;
             fogEnd = 50.0;
         } else
         if(fogColor.r * 255 < 3) {
-            fogStart = 50.0;
-            fogEnd = 150.0;
+            fogStart = 30.0;
+            fogEnd = 70.0;
         }
     }
 
