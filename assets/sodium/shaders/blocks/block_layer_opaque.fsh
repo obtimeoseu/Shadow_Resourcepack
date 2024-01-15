@@ -20,14 +20,33 @@ uniform float u_FogEnd; // The ending position of the shader fog
 
 out vec4 out_FragColor; // The output fragment for the color framebuffer
 
-vec4 showRedAndGray(vec4 color, vec4 fogColor, vec3 lightColor) {
-    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
+bool adjacentCheck(float valueA, float valueB) {
+	float compareLess = valueB - 0.01;
+	float compareMore = valueB + 0.01;
+	return (valueA > compareLess && valueA < compareMore);
+}
+
+vec4 showRedAndGray(vec4 color, inout vec4 fogColor, vec3 lightColor) {
+    float gray = (color.r + color.g + color.b) / 3;
+    if(fogColor.g == 0 && fogColor.b == 0) {
+        
+        if(fogColor.r * 255 < 1) {
+            color.rgb = vec3(gray);
+            return color;
+        } else
+        if(fogColor.r * 255 < 2) {
+            color.rgb = vec3(gray);
+            return color;
+        } else
+        if(fogColor.r * 255 < 3) {
+            color.rgb = vec3(gray);
+            return color;
+        } else {
+            return color;
+        }
+    } else {
         return color;
     }
-
-    //if(lightColor.r > 0.85) {
-    //    return color;
-    //}
 
     if(
         (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
@@ -36,18 +55,29 @@ vec4 showRedAndGray(vec4 color, vec4 fogColor, vec3 lightColor) {
         return color;
     }
 
-    float gray = (color.r + color.g + color.b) / 3;
     color.rgb = vec3(gray);
     return color;
 }
-vec3 showRedAndGray(vec3 color, vec4 fogColor, vec3 lightColor) {
-    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
+vec3 showRedAndGray(vec3 color, inout vec4 fogColor, vec3 lightColor) {
+    float gray = (color.r + color.g + color.b) / 3;
+    if(fogColor.g == 0 && fogColor.b == 0) {
+        if(fogColor.r * 255 < 1) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else
+        if(fogColor.r * 255 < 2) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else
+        if(fogColor.r * 255 < 3) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else {
+            return color;
+        }
+    } else {
         return color;
     }
-
-    //if(lightColor.r > 0.85) {
-    //    return color;
-    //}
 
     if(
         (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
@@ -56,7 +86,6 @@ vec3 showRedAndGray(vec3 color, vec4 fogColor, vec3 lightColor) {
         return color;
     }
 
-    float gray = (color.r + color.g + color.b) / 3;
     color.rgb = vec3(gray);
     return color;
 }
@@ -66,15 +95,34 @@ void main() {
     vec4 diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor, v_Lightcolor);
     vec3 tintColor = showRedAndGray(v_Vertcolor, fogColor, v_Lightcolor);
 
-
+    //diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor, v_Lightcolor);
+    //tintColor = showRedAndGray(v_Vertcolor, fogColor, v_Lightcolor);
+    
 #ifdef USE_FRAGMENT_DISCARD
     if (diffuseColor.a < v_MaterialAlphaCutoff) {
         discard;
     }
 #endif
-
+    
     // Modulate the color (used by ambient occlusion and per-vertex colouring)
     diffuseColor.rgb *= tintColor * v_Lightcolor;
 
-    out_FragColor = _linearFog(diffuseColor, v_FragDistance, u_FogColor, u_FogStart, u_FogEnd);
+    float fogStart = u_FogStart;
+    float fogEnd = u_FogEnd; 
+    if(fogColor.g == 0 && fogColor.b == 0) {
+        if(fogColor.r * 255 < 1) {
+            fogStart = 0.0;
+            fogEnd = 25.0;
+        } else
+        if(fogColor.r * 255 < 2) {
+            fogStart = 0.0;
+            fogEnd = 50.0;
+        } else
+        if(fogColor.r * 255 < 3) {
+            fogStart = 50.0;
+            fogEnd = 150.0;
+        }
+    }
+
+    out_FragColor = _linearFog(diffuseColor, v_FragDistance, u_FogColor, fogStart, fogEnd);
 }
