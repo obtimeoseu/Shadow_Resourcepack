@@ -120,7 +120,7 @@ void main() {
         } else
         if(fogColor.r * 255 < 3) {
             fogStart = 30.0;
-            fogEnd = 70.0;
+            fogEnd = 80.0;
         }
     }
 
