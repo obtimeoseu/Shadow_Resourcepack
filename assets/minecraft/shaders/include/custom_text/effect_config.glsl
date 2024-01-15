@@ -10,16 +10,12 @@
 
 
 TEXT_EFFECT_CASE(0) {
-    //apply_shaking_movement();
+}
+TEXT_EFFECT_CASE(4) {
+    apply_shaking_movement();
     //apply_glowing();
     //draw_shadow();
     //apply_shimmer();
-    override_text_color(rgb(255, 82, 82));
-    override_shadow_color(rgb(100, 20, 80));
-    apply_shadow_by_sub_type();
-}
-TEXT_EFFECT_CASE(4) {
-    //apply_shaking_movement();
     override_text_color(rgb(255, 82, 82));
     override_shadow_color(rgb(100, 20, 80));
     apply_shadow_by_sub_type();
