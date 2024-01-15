@@ -11,8 +11,25 @@ in float vertexDistance;
 in vec4 color;
 
 out vec4 fragColor;
-
+// The colour of the sky. Also affects text highlighting.
 void main() {
-    fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
+    float fogStart = FogStart;
+    float fogEnd = FogEnd;
+
+    if(FogColor.g == 0 && FogColor.b == 0) {
+        if(FogColor.r * 255 < 1) {
+            fogStart = 0.0;
+            fogEnd = 20.0;
+        } else
+        if(FogColor.r * 255 < 2) {
+            fogStart = 0.0;
+            fogEnd = 50.0;
+        } else
+        if(FogColor.r * 255 < 3) {
+            fogStart = 30.0;
+            fogEnd = 80.0;
+        }
+    }
+    fragColor = linear_fog(color, vertexDistance, fogStart, fogEnd, FogColor);
     //fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }

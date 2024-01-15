@@ -12,6 +12,16 @@ vec4 getDarkerLight(vec4 color) {
     return color;
 }
 
+vec4 getDarkerLight(vec4 color, int isGui) {
+    float grayScaleLight = (color.r + color.g + color.b) / 3;
+    if(isGui == 0) {
+        color.r = pow(grayScaleLight, 1.0) - 0.05;
+        color.g = pow(grayScaleLight, 1.1) - 0.125;
+        color.b = pow(grayScaleLight, 1.1) - 0.125;
+    }
+    return color;
+}
+
 vec4 minecraft_mix_light(vec3 lightDir0, vec3 lightDir1, vec3 normal, vec4 color) {
     lightDir0 = normalize(lightDir0);
     lightDir1 = normalize(lightDir1);

@@ -31,5 +31,25 @@ void main() {
     if (color.a < 0.1) {
         discard;
     }
-    fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
+
+    float fogStart = FogStart;
+    float fogEnd = FogEnd;
+
+    if(isGui == 0) {
+        if(FogColor.g == 0 && FogColor.b == 0) {
+            if(FogColor.r * 255 < 1) {
+                fogStart = 0.0;
+                fogEnd = 20.0;
+            } else
+            if(FogColor.r * 255 < 2) {
+                fogStart = 0.0;
+                fogEnd = 50.0;
+            } else
+            if(FogColor.r * 255 < 3) {
+                fogStart = 30.0;
+                fogEnd = 80.0;
+            }
+        }
+    }
+    fragColor = linear_fog(color, vertexDistance, fogStart, fogEnd, FogColor);
 }
