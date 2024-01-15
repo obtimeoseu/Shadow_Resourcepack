@@ -45,7 +45,7 @@ void main() {
 
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
-    lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0));
+    lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0), isGui);
     texCoord0 = UV0;
     normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }

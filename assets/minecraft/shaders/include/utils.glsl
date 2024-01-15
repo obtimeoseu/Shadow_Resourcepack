@@ -251,11 +251,28 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 }
 
 vec4 showRedAndGray(vec4 color, vec4 fogColor, int isGui) {
+    float gray = (color.r + color.g + color.b) / 3;
+
 		if(isGui > 0) {
 			return color;
 		}
 
-    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
+    if(fogColor.g == 0 && fogColor.b == 0) {
+			if(fogColor.r * 255 < 1) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else
+			if(fogColor.r * 255 < 2) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else
+			if(fogColor.r * 255 < 3) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else {
+				return color;
+			}
+    } else {
 			return color;
     }
 
@@ -266,17 +283,33 @@ vec4 showRedAndGray(vec4 color, vec4 fogColor, int isGui) {
 			return color;
     }
 
-    float gray = (color.r + color.g + color.b) / 3;
     color.rgb = vec3(gray);
     return color;
 }
 
 vec3 showRedAndGray(vec3 color, vec4 fogColor, int isGui) {
+    float gray = (color.r + color.g + color.b) / 3;
+
 		if(isGui > 0) {
 			return color;
 		}
 
-    if(fogColor.r != fogColor.g || fogColor.r != fogColor.b) {
+    if(fogColor.g == 0 && fogColor.b == 0) {
+			if(fogColor.r * 255 < 1) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else
+			if(fogColor.r * 255 < 2) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else
+			if(fogColor.r * 255 < 3) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else {
+				return color;
+			}
+    } else {
 			return color;
     }
 
@@ -287,7 +320,6 @@ vec3 showRedAndGray(vec3 color, vec4 fogColor, int isGui) {
 			return color;
     }
 
-    float gray = (color.r + color.g + color.b) / 3;
     color.rgb = vec3(gray);
     return color;
 }

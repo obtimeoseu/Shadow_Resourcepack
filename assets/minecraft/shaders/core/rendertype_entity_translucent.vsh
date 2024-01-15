@@ -32,6 +32,10 @@ out vec2 texCoord1;
 out vec4 normal;
 out float part;
 
+out float zPos;
+flat out int isGui;
+out vec4 tintColor;
+
 #define SPACING 1024.0
 #define MAXRANGE (0.5 * SPACING)
 
@@ -79,8 +83,19 @@ const vec2[] origins = vec2[](
 );
 
 void main() {
+	zPos = Position.z;
+	isGui = 0;
+	if(abs(ProjMat[3][3] - 1.0) < 0.01) {
+		if(zPos > 125.0) {
+			isGui = 1; // 일반 gui
+		} else {
+			isGui = 2; // gui doll
+		}
+	}
+	tintColor = Color;
+
 	vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, normalize(Normal), Color);
-	lightMapColor = texelFetch(Sampler2, UV2 / 16, 0);
+	lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0), isGui);
 	overlayColor = texelFetch(Sampler1, UV1, 0);
 	normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 
