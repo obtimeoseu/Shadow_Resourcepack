@@ -31,16 +31,16 @@ vec4 showRedAndGray(vec4 color, inout vec4 fogColor, vec3 lightColor) {
     if(fogColor.g == 0 && fogColor.b == 0) {
         
         if(fogColor.r * 255 < 1) {
-            color.rgb = vec3(gray);
-            return color;
+            //color.rgb = vec3(gray);
+            //return color;
         } else
         if(fogColor.r * 255 < 2) {
-            color.rgb = vec3(gray);
-            return color;
+            //color.rgb = vec3(gray);
+            //return color;
         } else
         if(fogColor.r * 255 < 3) {
-            color.rgb = vec3(gray);
-            return color;
+            //color.rgb = vec3(gray);
+            //return color;
         } else {
             return color;
         }
