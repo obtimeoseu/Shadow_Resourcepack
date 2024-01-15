@@ -2,6 +2,6 @@
 	"credit": "옵티머스",
     "parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "daily:onlydown/shadow_piece"
+		"layer0": "shadow:item/shadow_piece"
 	}
 }
