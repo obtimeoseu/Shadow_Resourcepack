@@ -36,9 +36,11 @@ vec3 _get_draw_translation(uint pos) {
 }
 
 vec3 getDarkerLight(vec3 color) {
-    color.r = pow(color.r, 1.0) - 0.05;
-    color.g = pow(color.g, 1.1) - 0.065;
-    color.b = pow(color.b, 1.1) - 0.065;
+    float grayScaleLight = (color.r + color.g + color.b) / 3;
+
+    color.r = pow(grayScaleLight, 1.0) - 0.0;
+    color.g = pow(grayScaleLight, 1.1) - 0.10;
+    color.b = pow(grayScaleLight, 1.1) - 0.10;
     return color;
 }
 
