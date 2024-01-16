@@ -1,4 +1,43 @@
 #version 150
+#define PI 3.14159265
+
+mat2 Rotate(float a)
+{
+    float s = sin(a);
+    float c = cos(a);
+    return mat2(c, -s, s, c);
+}
+
+vec3 hue(float h)
+{
+    float r = abs(h * 6.0 - 3.0) - 1.0;
+    float g = 2.0 - abs(h * 6.0 - 2.0);
+    float b = 2.0 - abs(h * 6.0 - 4.0);
+    return clamp(vec3(r,g,b), 0.0, 1.0);
+}
+
+vec3 HSVtoRGB(vec3 hsv) {
+    return ((hue(hsv.x) - 1.0) * hsv.y + 1.0) * hsv.z;
+}
+
+// A single iteration of Bob Jenkins' One-At-A-Time hashing algorithm.
+int hash(int x) {
+    x += ( x << 10 );
+    x ^= ( x >>  6 );
+    x += ( x <<  3 );
+    x ^= ( x >> 11 );
+    x += ( x << 15 );
+    return x;
+}
+
+int noise(ivec2 v, int seed) {
+    return hash(v.x ^ hash(v.y + seed) ^ hash(seed));
+}
+
+float lum(vec4 col)
+{
+    return col.r * 0.299 + col.g * 0.587 + col.b * 0.114;
+}
 
 //int vecToInt(vec3 color) {
 //	return (
