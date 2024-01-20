@@ -7,10 +7,19 @@
 TEXT_EFFECT_CASE(248) {
 }
 
-TEXT_EFFECT_CASE(244) {
-    //override_text_color(vec4(1.0, 0.0, 0.0, 1.0));
-    apply_shaking_movement();
-    //apply_waving_movement();
+TEXT_EFFECT_CASE(244) { // 흰색
+    override_text_color(vec3(255, 255, 255) / 255.0);
+}
+
+TEXT_EFFECT_CASE(240) { // 회색
+    override_text_color(vec3(200, 200, 200) / 255.0);
+}
+
+TEXT_EFFECT_CASE(236) {
+    override_text_color(vec3(255, 255, 255) / 255.0);
+    //apply_waving_movement(0.4);
+    make_bigger_50();
+    draw_shadow();
 }
 /*
 TEXT_EFFECT_CASE(244) {

@@ -55,16 +55,19 @@ void apply_horizontal_shadow() { // 수평 그림자
 }
 
 void draw_shadow() {
-    //textData.shouldScale = true;
-    vec2 offset = vec2(0.5, 0.5) / 128;
+    if(!textData.isShadow) { 
 
-    vec2 uv = textData.uv - offset;
-    vec4 s1 = texture(Sampler0, uv);
-    s1.rgb *= s1.a;
-    if(uvBoundsCheck(uv, textData.uvMin, textData.uvMax)) s1 = vec4(0.0);
+        vec2 offset = vec2(0.5, 0.5) / 128;
 
-    textData.backColor = (s1 * vec4(0.0, 0.75, 1.0, 1.0));
-    textData.backColor.rgb *= textData.color.rgb;
+        vec2 uv = textData.uv - offset;
+        vec4 s1 = texture(Sampler0, uv);
+        s1.rgb *= s1.a;
+        if(uvBoundsCheck(uv, textData.uvMin, textData.uvMax)) s1 = vec4(0.0);
+
+        textData.backColor = (s1 * vec4(textData.color.r / 4, textData.color.g / 4, textData.color.b / 4, 1.0));
+        textData.backColor.rgb *= textData.color.rgb;
+        textData.shouldScale = true;
+    }
 }
 
 // 효과
@@ -112,6 +115,21 @@ void apply_shaking_movement() {
     textData.shouldScale = true;
 
     textData.uv += vec2(noiseX, noiseY) / 128.0;
+}
+
+void make_bigger_25() {
+    textData.shouldScale = true;
+
+    textData.uv.x = textData.uvCenter.x + (textData.uv.x - textData.uvCenter.x) / 1.25;
+    textData.uv.y = textData.uvCenter.y + (textData.uv.y - textData.uvCenter.y) / 1.25;
+    textData.uv.y += 3 / 128.0;
+}
+void make_bigger_50() {
+    textData.shouldScale = true;
+
+    textData.uv.x = textData.uvCenter.x + (textData.uv.x - textData.uvCenter.x) / 1.5;
+    textData.uv.y = textData.uvCenter.y + (textData.uv.y - textData.uvCenter.y) / 1.5;
+    textData.uv.y += 3 / 128.0;
 }
 
 void apply_iterating_movement(float speed, float space) {

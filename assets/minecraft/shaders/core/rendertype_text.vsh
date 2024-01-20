@@ -287,7 +287,7 @@ void main() {
             gl_Position.zw = vec2(-1, 1);
         }
         if(position.z == 100.0 || position.z == 100.03) { // 채팅 우선순위 변경
-            gl_Position.zw = vec2(-1, 1);
+            gl_Position.zw = vec2(-0.95, 1);
         }
 
         uvpos1 = uvpos2 = uvpos3 = uvpos4 = ipos1 = ipos2 = ipos3 = ipos4 = vec3(0.0);

@@ -293,16 +293,9 @@ void main() {
         fragColor = mix(vec4(textData.backColor.rgb, textData.backColor.a * textData.color.a), textureSample * textData.color, textureSample.a);
         fragColor.rgb = mix(fragColor.rgb, textData.topColor.rgb, textData.topColor.a);
         fragColor *= lightColor * ColorModulator;
-        //if(textData.applyTextEffect) {
-        //    if(isShadow == 1.0) {
-        //        fragColor.r = 1.0;
-        //        fragColor.g = 1.0;
-        //        fragColor.b = 1.0;
-        //    } else {
-        //        fragColor.r = 1.0;
-        //        fragColor.g = 0.0;
-        //        fragColor.b = 0.0;
-        //    }
-        //}
+        
+        if (fragColor.a < 0.1) {
+            discard;
+        }
     }
 }
