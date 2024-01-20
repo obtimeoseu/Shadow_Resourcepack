@@ -14,6 +14,14 @@
         },
         {
             "type": "reference",
+            "id": "minecraft:include/screen_effect"
+        },
+        {
+            "type": "reference",
+            "id": "minecraft:include/animation_text"
+        },
+        {
+            "type": "reference",
             "id": "minecraft:include/unifont"
         }
     ]

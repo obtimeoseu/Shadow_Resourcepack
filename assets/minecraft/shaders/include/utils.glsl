@@ -1,5 +1,12 @@
 #version 150
-#define PI 3.14159265
+#define PI 3.1415926
+
+mat2 mat2_rotate_z(float radians) {
+    return mat2(
+        cos(radians), -sin(radians),
+        sin(radians), cos(radians)
+    );
+}
 
 mat2 Rotate(float a)
 {

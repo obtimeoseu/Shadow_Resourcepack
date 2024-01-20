@@ -1,0 +1,31 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/frame.png",
+            "ascent": 0,
+            "height": 0,
+            "chars": [
+                "税"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/effects_marks.png",
+            "ascent": 0,
+            "height": 0,
+            "chars": [
+                "美羊大好國词"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/stain.png",
+            "ascent": 0,
+            "height": 0,
+            "chars": [
+                "典"
+            ]
+        }
+    ]
+}

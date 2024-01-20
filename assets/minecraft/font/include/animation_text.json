@@ -1,0 +1,40 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/emoji.png",
+            "ascent": 7,
+            "height": 40,
+            "chars": [
+                "\u0021"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/smile.png",
+            "ascent": 7,
+            "height": 48,
+            "chars": [
+                "\u0022"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/soldier.png",
+            "ascent": 7,
+            "height": 256,
+            "chars": [
+                "\u0023"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/slime.png",
+            "ascent": 7,
+            "height": 64,
+            "chars": [
+                "\u0024"
+            ]
+        }
+    ]
+}
