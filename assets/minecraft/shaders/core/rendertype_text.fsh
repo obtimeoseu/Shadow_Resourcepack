@@ -273,8 +273,7 @@ void main() {
             textData.position_2 += vec2(-1.0, 1.0);
         }
 
-        // 기본 색코드, gui 타이틀 아닐 경우 커스텀 이펙트 적용
-        if(textData.applyTextEffect) {
+        if(textData.applyTextEffect) { // 기본 색코드, gui 타이틀 아닐 경우 커스텀 이펙트 적용
             switch(conditionColor.g) {
             case 63:
                 #moj_import <custom_text/effect_config.glsl>
@@ -283,7 +282,6 @@ void main() {
                 break;
             }
         }
-        //
 
         if(uvBoundsCheck(textData.uv, uvMin, uvMax)) textData.doTextureLookup = false;
 

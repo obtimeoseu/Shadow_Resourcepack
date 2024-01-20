@@ -2,7 +2,7 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "minecraft:font/emoji.png",
+            "file": "custom:font/emoji.png",
             "ascent": 7,
             "height": 40,
             "chars": [
@@ -11,7 +11,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/smile.png",
+            "file": "custom:font/smile.png",
             "ascent": 7,
             "height": 48,
             "chars": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/soldier.png",
+            "file": "custom:font/soldier.png",
             "ascent": 7,
             "height": 256,
             "chars": [
@@ -29,7 +29,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/slime.png",
+            "file": "custom:font/slime.png",
             "ascent": 7,
             "height": 64,
             "chars": [

@@ -2,7 +2,7 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "minecraft:font/frame.png",
+            "file": "custom:font/frame.png",
             "ascent": 0,
             "height": 0,
             "chars": [
@@ -11,7 +11,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/effects_marks.png",
+            "file": "custom:font/effects_marks.png",
             "ascent": 0,
             "height": 0,
             "chars": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/stain.png",
+            "file": "custom:font/stain.png",
             "ascent": 0,
             "height": 0,
             "chars": [

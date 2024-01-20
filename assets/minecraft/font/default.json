@@ -1,6 +1,28 @@
 {
     "providers": [
         {
+            "type": "bitmap",
+            "file": "custom:font/white.png",
+            "ascent": 256,
+            "height": 512,
+            "chars": ["\uE000"]
+        },
+        {
+          "type": "bitmap",
+          "file": "custom:font/black.png",
+          "ascent": 256,
+          "height": 512,
+          "chars": ["\uE001"]
+        },
+        {
+          "type": "bitmap",
+          "file": "custom:font/head_creator.png",
+          "ascent": 8,
+          "height": 10,
+          "chars": ["\uF001\uF002\uF003\uF004\uF005\uF006"]
+        },
+        
+        {
             "type": "reference",
             "id": "minecraft:include/space"
         },
