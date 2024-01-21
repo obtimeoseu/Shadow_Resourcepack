@@ -122,7 +122,7 @@ void make_bigger_25() {
 
     textData.uv.x = textData.uvCenter.x + (textData.uv.x - textData.uvCenter.x) / 1.25;
     textData.uv.y = textData.uvCenter.y + (textData.uv.y - textData.uvCenter.y) / 1.25;
-    textData.uv.y += 3 / 128.0;
+    textData.uv.y += 2.5 / 128.0;
 }
 void make_bigger_50() {
     textData.shouldScale = true;

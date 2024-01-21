@@ -29,7 +29,12 @@ out vec4 fragColor;
 */
 void main() {
 	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
-    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui) * showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
+
+    vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
+    if(!adjacentCheck(alpha, 242.0)) {
+        color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
+    }
+    
     color = apply_emissive_perspective_for_item(color, lightMapColor, tintColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha);
     if (color.a < 0.1) {
         discard;
