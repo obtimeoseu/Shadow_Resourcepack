@@ -23,8 +23,6 @@ TEXT_POSITION_CASE(240) {
     textData.position.y += 11;
 }
 
-TEXT_POSITION_CASE(236) {
-
-    textData.position.x += 10;
-
+TEXT_POSITION_CASE(200) {
+    textData.position.y -= 20;
 }

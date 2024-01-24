@@ -4,12 +4,14 @@
 
 // 사용 가능 범위: 248 ~ 68
 
-TEXT_EFFECT_CASE(248) {
+TEXT_EFFECT_CASE(248) { // 그림자 제거
+    if(textData.isShadow) {
+        override_text_color(vec4(255, 255, 255, 0) / 255.0);
+    }
 }
 
 TEXT_EFFECT_CASE(244) { // 흰색
     override_text_color(vec3(255, 255, 255) / 255.0);
-    //apply_shaking_movement();
     draw_shadow();
 }
 
@@ -24,6 +26,9 @@ TEXT_EFFECT_CASE(236) {
     apply_shaking_movement();
     make_bigger_25();
     draw_shadow();
+}
+TEXT_EFFECT_CASE(220) { // 하늘 , 기존 그림자 존재
+    override_text_color(vec3(84, 255, 255) / 255.0);
 }
 
 TEXT_EFFECT_CASE(200) { // 빨강

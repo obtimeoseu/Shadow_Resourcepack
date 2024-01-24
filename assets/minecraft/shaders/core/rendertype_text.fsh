@@ -274,6 +274,9 @@ void main() {
         }
 
         if(textData.applyTextEffect) { // 기본 색코드, gui 타이틀 아닐 경우 커스텀 이펙트 적용
+            if(textData.isMoved) {
+                override_text_color(vec3(255, 255, 255) / 255.0);
+            }
             switch(conditionColor.g) {
             case 63:
                 #moj_import <custom_text/effect_config.glsl>
