@@ -28,15 +28,22 @@ TEXT_EFFECT_CASE(236) {
     draw_shadow();
 }
 
-TEXT_EFFECT_CASE(220) { // 보스바용 흰색 , 기존 그림자 존재
+TEXT_EFFECT_CASE(220) { // 보스바용 흰색 , 기존 그림자 존재하는거 지우고 아웃라인 적용
     override_text_color(vec3(255, 255, 255) / 255.0);
     if(textData.isShadow) {
         override_text_color(vec4(255, 255, 255, 0) / 255.0);
     }
     apply_outline(rgb(0, 0, 0));
 }
-TEXT_EFFECT_CASE(216) { // 보스바용 하늘색 , 기존 그림자 존재
+TEXT_EFFECT_CASE(216) { // 보스바용 하늘색 , 기존 그림자 존재하는거 지우고 아웃라인 적용
     override_text_color(vec3(84, 255, 255) / 255.0);
+    if(textData.isShadow) {
+        override_text_color(vec4(255, 255, 255, 0) / 255.0);
+    }
+    apply_outline(rgb(0, 0, 0));
+}
+TEXT_EFFECT_CASE(212) { // 보스바용 빨간색 , 기존 그림자 존재하는거 지우고 아웃라인 적용
+    override_text_color(vec3(255, 84, 84) / 255.0);
     if(textData.isShadow) {
         override_text_color(vec4(255, 255, 255, 0) / 255.0);
     }
