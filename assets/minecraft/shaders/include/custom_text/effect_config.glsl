@@ -9,7 +9,7 @@ TEXT_EFFECT_CASE(248) {
 
 TEXT_EFFECT_CASE(244) { // 흰색
     override_text_color(vec3(255, 255, 255) / 255.0);
-    apply_shaking_movement();
+    //apply_shaking_movement();
     draw_shadow();
 }
 
@@ -23,6 +23,25 @@ TEXT_EFFECT_CASE(236) {
     //apply_waving_movement(0.4);
     apply_shaking_movement();
     make_bigger_25();
+    draw_shadow();
+}
+
+TEXT_EFFECT_CASE(200) { // 빨강
+    override_text_color(vec3(168, 0, 0) / 255.0);
+    //apply_shaking_movement();
+    draw_shadow();
+}
+
+TEXT_EFFECT_CASE(196) { // 빨강 + 흔들림
+    override_text_color(vec3(168, 0, 0) / 255.0);
+    apply_shaking_movement();
+    draw_shadow();
+}
+
+TEXT_EFFECT_CASE(194) { // 빨강 + 거대 텍스트 + 흔들림
+    override_text_color(vec3(168, 0, 0) / 255.0);
+    make_bigger_25();
+    apply_shaking_movement();
     draw_shadow();
 }
 /*
