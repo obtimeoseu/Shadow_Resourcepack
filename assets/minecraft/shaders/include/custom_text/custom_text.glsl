@@ -187,8 +187,8 @@ void apply_outline(vec3 color) {
     vec2 texelSize = 1.0 / vec2(256.0);
     bool outline = false;
 
-    for(int x = -1; x <= 1; x++) {
-        for(int y = -1; y <= 1; y++) {
+    for(int x = -2; x <= 2; x++) {
+        for(int y = -2; y <= 2; y++) {
             if(x == 0 && y == 0) continue;
 
             vec2 uv = textData.uv + vec2(x, y) * texelSize;
@@ -208,7 +208,7 @@ void apply_thin_outline(vec3 color) {
         textData.color.rgb = color;
     } 
     
-    vec2 texelSize = 0.5 / vec2(256.0);
+    vec2 texelSize = 1 / vec2(256.0);
     bool outline = false;
 
     for(int x = -1; x <= 1; x++) {

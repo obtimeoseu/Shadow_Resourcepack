@@ -27,8 +27,20 @@ TEXT_EFFECT_CASE(236) {
     make_bigger_25();
     draw_shadow();
 }
-TEXT_EFFECT_CASE(220) { // 하늘 , 기존 그림자 존재
+
+TEXT_EFFECT_CASE(220) { // 보스바용 흰색 , 기존 그림자 존재
+    override_text_color(vec3(255, 255, 255) / 255.0);
+    if(textData.isShadow) {
+        override_text_color(vec4(255, 255, 255, 0) / 255.0);
+    }
+    apply_outline(rgb(0, 0, 0));
+}
+TEXT_EFFECT_CASE(216) { // 보스바용 하늘색 , 기존 그림자 존재
     override_text_color(vec3(84, 255, 255) / 255.0);
+    if(textData.isShadow) {
+        override_text_color(vec4(255, 255, 255, 0) / 255.0);
+    }
+    apply_outline(rgb(0, 0, 0));
 }
 
 TEXT_EFFECT_CASE(200) { // 빨강
