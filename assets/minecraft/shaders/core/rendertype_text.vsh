@@ -291,7 +291,7 @@ void main() {
         gl_Position = ProjMat * ModelViewMat * vec4(position, 1.0);
 
         if(position.z == 0.0 && isShadow != 1.0) { // 스코어보드 우선순위 변경
-            if(applyTextEffect == 1.0) {
+            if(applyTextEffect == 1.0 && !compareColor(conditionColor.rgb, vec3(63, 63, 32)) && !compareColor(conditionColor.rgb, vec3(26, 23, 18))) {
                 gl_Position.zw = vec2(-1, 1);
             }
         }
