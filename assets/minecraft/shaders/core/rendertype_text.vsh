@@ -243,7 +243,14 @@ void main() {
         if( // gui 타이틀일 경우
             compareColor(conditionColor.rgb, vec3(16, 16, 16))
         ) {
-            //vertexColor = vec4(1.0, 0.0, 0.0, 1.0); // gui 타이틀 색상 변경
+            vertexColor = vec4(255.0, 255.0, 255.0, 255.0) / 255.0; // gui 타이틀 색상 변경
+            baseColor = vec4(255.0, 255.0, 255.0, 255.0) / 255.0;
+            conditionColor = ivec3(
+                int(round(baseColor.r * 255.0) / 4),
+                int(round(baseColor.g * 255.0) / 4),
+                int(round(baseColor.b * 255.0) / 4)
+            );
+
             applyTextEffect = 0.0;
             textData.applyTextEffect = false;
         } else { // 기본 색코드, gui 타이틀 아닐 경우
@@ -297,7 +304,6 @@ void main() {
             case 2: ipos3 = vec3(gl_Position.xy, 1.0); uvpos3 = vec3(UV0.xy, 1.0); break;
             case 3: ipos4 = vec3(gl_Position.xy, 1.0); uvpos4 = vec3(UV0.xy, 1.0); break;
         }
-        //textData.shouldScale = true;
         if(applyTextEffect == 1.0 && textData.shouldScale) {
             gl_Position.xy += corner * 0.2; // 맵 상에 존재하는 텍스트는 다른 수식으로 크기 늘려야 함
             changedScale = 1.0;
