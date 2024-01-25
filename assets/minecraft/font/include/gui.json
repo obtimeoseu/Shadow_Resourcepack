@@ -44,6 +44,78 @@
             "chars": [
                 "\u0000\u0000\u0000\u0000\u0000\u0000\uF142\u0000\u0000\u0000\u0000\u0000\u0000"
             ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_door_progress.png",
+            "ascent": 24,
+            "height": 64,
+            "chars": [
+                "\uF161"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_door_background.png",
+            "ascent": 24,
+            "height": 64,
+            "chars": [
+                "\uF162"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_0_progress.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF163"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_0_background.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF164"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_1_progress.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF165"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_1_background.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF166"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_2_progress.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF167"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/shadow_boss_2_background.png",
+            "ascent": 16,
+            "height": 64,
+            "chars": [
+                "\uF168"
+            ]
         }
     ]
 }
