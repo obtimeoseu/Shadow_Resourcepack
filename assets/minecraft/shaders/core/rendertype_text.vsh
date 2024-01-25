@@ -291,7 +291,9 @@ void main() {
         gl_Position = ProjMat * ModelViewMat * vec4(position, 1.0);
 
         if(position.z == 0.0 && isShadow != 1.0) { // 스코어보드 우선순위 변경
-            gl_Position.zw = vec2(-1, 1);
+            if(applyTextEffect == 1.0) {
+                gl_Position.zw = vec2(-1, 1);
+            }
         }
         if(position.z == 100.0 || position.z == 100.03) { // 채팅 우선순위 변경
             gl_Position.zw = vec2(-0.95, 1);
