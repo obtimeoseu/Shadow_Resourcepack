@@ -250,7 +250,7 @@ void main() {
                 int(round(baseColor.g * 255.0) / 4),
                 int(round(baseColor.b * 255.0) / 4)
             );
-
+            textData.position.y += 1;
             applyTextEffect = 0.0;
             textData.applyTextEffect = false;
         } else { // 기본 색코드, gui 타이틀 아닐 경우
