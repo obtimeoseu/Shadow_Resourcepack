@@ -251,7 +251,7 @@ void main() {
                 int(round(baseColor.b * 255.0) / 4)
             );
             textData.position.y += 1;
-            applyTextEffect = 0.0;
+            applyTextEffect = -1.0;
             textData.applyTextEffect = false;
         } else { // 기본 색코드, gui 타이틀 아닐 경우
             switch(conditionColor.r) {
@@ -293,6 +293,9 @@ void main() {
         if(position.z == 0.0 && isShadow != 1.0) { // 스코어보드 우선순위 변경
             if(applyTextEffect == 1.0 && !compareColor(conditionColor.rgb, vec3(63, 63, 32)) && !compareColor(conditionColor.rgb, vec3(26, 23, 18))) {
                 gl_Position.zw = vec2(-1, 1);
+            }
+            if(applyTextEffect == -1) { // gui 타이틀로 쓰인 텍스트
+                //gl_Position.zw = vec2(1, 1);
             }
         }
         if(position.z == 100.0 || position.z == 100.03) { // 채팅 우선순위 변경
