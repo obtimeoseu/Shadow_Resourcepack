@@ -2,7 +2,7 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "shadow:gui/bossbar/container/none_27.png",
+            "file": "shadow:gui/container/none_27.png",
             "ascent": 14,
             "height": 256,
             "chars": [
