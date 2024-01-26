@@ -2,6 +2,15 @@
     "providers": [
         {
             "type": "bitmap",
+            "file": "shadow:gui/container/none_27.png",
+            "ascent": 14,
+            "height": 256,
+            "chars": [
+                "\uF14F"
+            ]
+        },
+        {
+            "type": "bitmap",
             "file": "shadow:gui/beacon_altar_on.png",
             "ascent": 6,
             "height": 32,
