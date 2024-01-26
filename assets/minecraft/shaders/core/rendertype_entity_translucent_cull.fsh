@@ -59,5 +59,25 @@ void main() {
             }
         }
     }
+
     fragColor = linear_fog(color, vertexDistance, fogStart, fogEnd, FogColor);
+    if(isGui == 0) {
+        
+        // 1.1 1
+        // 0 0.1
+        
+        // 1 0
+        if(zPos > -1.1) {
+            fragColor.a *= (-zPos - 1) * 10;
+        }
+
+        if(zPos > -1) {
+            discard;
+        }
+    }
+    
+        //fragColor.r = 1.0;
+        //fragColor.g = 1.0;
+        //fragColor.b = 1.0;
+        //discard;
 }
