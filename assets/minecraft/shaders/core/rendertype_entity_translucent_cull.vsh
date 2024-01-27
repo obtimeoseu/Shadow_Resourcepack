@@ -31,6 +31,7 @@ out vec4 normal;
 out float zPos;
 flat out int isGui;
 out vec4 tintColor;
+out vec4 screenPos;
 
 void main() {
     zPos = Position.z;
@@ -45,7 +46,8 @@ void main() {
     tintColor = Color;
     
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
-
+    screenPos = gl_Position;
+    
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
     lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0), isGui);

@@ -26,6 +26,8 @@ in float part;
 in float zPos;
 flat in int isGui;
 in vec4 tintColor;
+in vec4 screenPos;
+
 out vec4 fragColor;
 
 void main() {
@@ -73,4 +75,18 @@ void main() {
     }
 
     fragColor = linear_fog(color, vertexDistance, fogStart, fogEnd, FogColor);
+
+    // 가까이 있을때 가리기
+    if(isGui == 0) {
+        if(adjacentCheck(alpha, 243.0)) {
+            float dis = 0.8;
+            float blur = 0.2;
+            if(screenPos.z < dis) {
+                discard;
+            }
+            if(screenPos.z < dis + blur) {
+                fragColor.a *= (screenPos.z - dis) / blur;
+            }
+        }
+    }
 }

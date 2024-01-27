@@ -24,6 +24,7 @@ out vec4 normal;
 out float zPos;
 flat out int isGui;
 out vec4 tintColor;
+out vec4 screenPos;
 
 void main() {
     zPos = Position.z;
@@ -39,6 +40,7 @@ void main() {
     
     vec3 pos = Position + ChunkOffset;
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
+    screenPos = gl_Position;
 
     vertexDistance = fog_distance(ModelViewMat, pos, FogShape);
     vertexColor = Color * minecraft_sample_lightmap(Sampler2, UV2);

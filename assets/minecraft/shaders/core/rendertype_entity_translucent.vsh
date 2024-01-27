@@ -35,6 +35,7 @@ out float part;
 out float zPos;
 flat out int isGui;
 out vec4 tintColor;
+out vec4 screenPos;
 
 #define SPACING 1024.0
 #define MAXRANGE (0.5 * SPACING)
@@ -107,6 +108,7 @@ void main() {
 		texCoord1 = vec2(0.0);
 		vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
 		gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    screenPos = gl_Position;
 	}
 	else {
 		vec3 wpos = IViewRotMat * Position;
@@ -118,6 +120,7 @@ void main() {
 
 		if (partId == 0) { // higher precision position if no translation is needed
 			gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    	screenPos = gl_Position;
 		}
 		else {
 			// vec4 samp1 = texture(Sampler0, vec2(54.0 / 64.0, 20.0 / 64.0));
@@ -205,6 +208,7 @@ void main() {
 
 			wpos.y += SPACING * partId;
 			gl_Position = ProjMat * ModelViewMat * vec4(inverse(IViewRotMat) * wpos, 1.0);
+    	screenPos = gl_Position;
 
 			UVout = origins[2 * (partId - 1) + outerLayer];
 			UVout2 = origins[2 * (partId - 1)];
