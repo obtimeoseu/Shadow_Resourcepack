@@ -20,7 +20,7 @@
       },
       {
         "index": 4,
-        "time": 2
+        "time": 20
       },
       {
         "index": 5,
@@ -36,7 +36,7 @@
       },
       {
         "index": 8,
-        "time": 20
+        "time": 2
       },
       {
         "index": 9,
@@ -80,6 +80,22 @@
       },
       {
         "index": 19,
+        "time": 2
+      },
+      {
+        "index": 20,
+        "time": 20
+      },
+      {
+        "index": 21,
+        "time": 2
+      },
+      {
+        "index": 22,
+        "time": 2
+      },
+      {
+        "index": 23,
         "time": 2
       }
     ]
