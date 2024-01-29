@@ -97,7 +97,7 @@ vec4 get_customEmssiveColor(vec4 inputColor, vec4 lightColor, vec4 emssiveColor)
 
 // for item
 vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 tintColor, float vertexDistance, float zPos, int isGui, float FogStart, float FogEnd, float inputAlpha) {
-	vec4 remappingColor = inputColor * lightColor;
+	vec4 remappingColor = inputColor * tintColor * lightColor;
 
 	// 염색 색에 따라 데미지 입는 색 설정
 	//if(compareColor(tintColor.rgb, vec3(254, 254, 254) / 255.0)) {
@@ -114,10 +114,10 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	} else
 	if(adjacentCheck(inputAlpha, 254.0)) { // GUI O | FirstPerson O | ThirdPerson O | Emssive O
 		if(isGui == 1) {
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
 		} else {
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
 		}
 	} else
@@ -142,7 +142,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		} else {
 			if(FogStart > FogEnd) {
 				if(vertexDistance < 800) {
-					remappingColor = inputColor;
+					remappingColor = inputColor * tintColor;
 					remappingColor.a = 1.0;
 				} else {
 					remappingColor.a = 0.0;
@@ -176,10 +176,10 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 					remappingColor.a = 0.0;
 				} else {
 					remappingColor.a = 1.0;
-					remappingColor = inputColor;
+					remappingColor = inputColor * tintColor;
 				}
 			} else {
-				remappingColor = inputColor;
+				remappingColor = inputColor * tintColor;
 				remappingColor.a = 1.0;
 			}
 		}
@@ -195,7 +195,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		if(isGui == 1) {
 			remappingColor.a = 0.0;
 		} else {
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
 		}
 	} else
@@ -220,7 +220,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		} else {
 			if(FogStart > FogEnd) {
 				if(vertexDistance < 800) {
-					remappingColor = inputColor;
+					remappingColor = inputColor * tintColor;
 					remappingColor.a = 1.0;
 				} else {
 					remappingColor.a = 0.0;
@@ -254,10 +254,10 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 					remappingColor.a = 0.0;
 				} else {
 					remappingColor.a = 1.0;
-					remappingColor = inputColor;
+					remappingColor = inputColor * tintColor;
 				}
 			} else {
-				remappingColor = inputColor;
+				remappingColor = inputColor * tintColor;
 				remappingColor.a = 1.0;
 			}
 		}
@@ -276,10 +276,10 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	} else
 	if(adjacentCheck(inputAlpha, 241.0)) { // 그림자 제거 (fsh 에서 제거중) + 발광
 		if(isGui == 1) {
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
 		} else {
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
 		}
 	} else
@@ -293,7 +293,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	if(adjacentCheck(inputAlpha, 2.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive O
 		if(isGui == 1) {
 			remappingColor.a = 1.0;
-			remappingColor = inputColor;
+			remappingColor = inputColor * tintColor;
 		} else {
 			remappingColor.a = 0.0;
 		}
