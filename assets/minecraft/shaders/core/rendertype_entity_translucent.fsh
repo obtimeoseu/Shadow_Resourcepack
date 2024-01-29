@@ -47,7 +47,7 @@ void main() {
             color.a = 1.0;
         }
     }
-    if(!adjacentCheck(alpha, 242.0)) {
+    if(!adjacentCheck(alpha, 241.0) ||!adjacentCheck(alpha, 242.0) ) {
         color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     }
 
