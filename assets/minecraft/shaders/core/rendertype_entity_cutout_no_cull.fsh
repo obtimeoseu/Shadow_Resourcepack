@@ -27,7 +27,7 @@ out vec4 fragColor;
 // 엔티티
 void main() {
 	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
-
+    
     vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
     if(!adjacentCheck(alpha, 241.0) && !adjacentCheck(alpha, 242.0) ) {
         color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;

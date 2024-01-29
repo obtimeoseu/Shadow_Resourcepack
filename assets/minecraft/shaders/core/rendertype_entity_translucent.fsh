@@ -32,7 +32,7 @@ out vec4 fragColor;
 
 void main() {
 	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
-
+    alpha = 255; // 말 같은 엔티티 투명도 조건 안따지도록 
     vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
     if (color.a < 0.1 || abs(mod(part + 0.5, 1.0) - 0.5) > 0.001) {
         discard;

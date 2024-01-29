@@ -33,7 +33,6 @@ void main() {
         color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     }
 
-
     color = apply_emissive_perspective_for_item(color, lightMapColor, tintColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha);
     if (color.a < 0.1) {
         discard;
