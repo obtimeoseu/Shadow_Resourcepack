@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "minecraft:item/warped_fungus_on_a_stick"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 1000 }, "model": "shadow:item/shadow_walkie_talkie_off" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.0001 }, "model": "shadow:item/shadow_walkie_talkie_calling_0" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.1 }, "model": "shadow:item/shadow_walkie_talkie_calling_1" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.2 }, "model": "shadow:item/shadow_walkie_talkie_calling_2" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.3 }, "model": "shadow:item/shadow_walkie_talkie_calling_3" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.4 }, "model": "shadow:item/shadow_walkie_talkie_calling_4" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.5 }, "model": "shadow:item/shadow_walkie_talkie_calling_5" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.6 }, "model": "shadow:item/shadow_walkie_talkie_calling_6" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.7 }, "model": "shadow:item/shadow_walkie_talkie_calling_7" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.8 }, "model": "shadow:item/shadow_walkie_talkie_calling_8" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.9 }, "model": "shadow:item/shadow_walkie_talkie_calling_9" },
+    { "predicate": { "custom_model_data": 1000, "cooldown": 0.999 }, "model": "shadow:item/shadow_walkie_talkie_on" }
+  ]
+}
