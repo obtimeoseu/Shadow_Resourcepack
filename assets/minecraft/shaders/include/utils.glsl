@@ -27,6 +27,53 @@ vec3 HSVtoRGB(vec3 hsv) {
     return ((hue(hsv.x) - 1.0) * hsv.y + 1.0) * hsv.z;
 }
 
+float hash12(vec2 p) {
+	vec3 p3  = fract(vec3(p.xyx) * .1031);
+	p3 += dot(p3, p3.yzx + 33.33);
+	return fract((p3.x + p3.y) * p3.z);
+}
+
+const vec3[] EP_COLORS = vec3[](
+    vec3(0.110818, 0.098399 / 1.7, 0.022087),
+    vec3(0.089485, 0.095924 / 1.7, 0.011892),
+    vec3(0.100326, 0.101689 / 1.7, 0.027636),
+    vec3(0.114838, 0.109883 / 1.7, 0.046564),
+    vec3(0.097189, 0.117696 / 1.7, 0.064901),
+    vec3(0.123646, 0.086895 / 1.7, 0.063761),
+    vec3(0.166380, 0.111994 / 1.7, 0.084817),
+    vec3(0.091064, 0.154120 / 1.7, 0.097489),
+    vec3(0.195191, 0.131144 / 1.7, 0.106152),
+    vec3(0.187229, 0.110188 / 1.7, 0.097721),
+    vec3(0.148582, 0.138278 / 1.7, 0.133516),
+    vec3(0.235792, 0.243332 / 1.7, 0.070006),
+    vec3(0.214696, 0.142899 / 1.7, 0.196766),
+    vec3(0.321970, 0.315338 / 1.7, 0.047281),
+    vec3(0.302066, 0.390010 / 1.7, 0.204675),
+    vec3(0.661491, 0.314821 / 1.7, 0.080955)
+);
+
+const mat4 EP_SCALE_TRANSLATE = mat4(
+    0.6, 0.0, 0.0, 0.25,
+    0.0, 0.6, 0.0, 0.25,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, 0.0, 1.0
+);	
+
+mat4 end_portal_layer(float layer, float gameTime) {
+    mat4 translate = mat4(
+        1.0, 0.0, 0.0, 17.0 / layer,
+        0.0, 1.0, 0.0, (2.0 + layer / 1.5) * (gameTime * 1.5),
+        0.0, 0.0, 1.0, 0.0,
+        0.0, 0.0, 0.0, 1.0
+    );
+
+    mat2 rotate = mat2_rotate_z(radians((layer * layer * 4321.0 + layer * 9.0) * 2.0));
+
+    mat2 scale = mat2((4.5 - layer / 4.0) * 2.0);
+
+    return mat4(scale * rotate) * translate * EP_SCALE_TRANSLATE;
+}
+
 // A single iteration of Bob Jenkins' One-At-A-Time hashing algorithm.
 int hash(int x) {
     x += ( x << 10 );
@@ -96,7 +143,7 @@ vec4 get_customEmssiveColor(vec4 inputColor, vec4 lightColor, vec4 emssiveColor)
 }
 
 // for item
-vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 tintColor, float vertexDistance, float zPos, int isGui, float FogStart, float FogEnd, float inputAlpha) {
+vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 tintColor, vec4 vertexColor, float vertexDistance, float zPos, int isGui, float FogStart, float FogEnd, float inputAlpha, vec2 screenSize, vec4 screenFragCoord, float gameTime) {
 	vec4 remappingColor = inputColor * tintColor * lightColor;
 
 	// 염색 색에 따라 데미지 입는 색 설정
@@ -262,14 +309,15 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			}
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 243.0)) { // 텍스쳐 조명에 따른 투명도 변경
-		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
-
-		remappingColor.a = 0;//.275;
-		if(grayScaleLight > 0.5) {
-			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
-			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
+	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과
+		remappingColor.a = 1.0;
+		remappingColor.rgb = EP_COLORS[0] * vec3(0.647, 0.337, 0.463);
+		for (int i = 0; i < 16; i++) {
+			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
+			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
+			remappingColor.rgb += (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP_COLORS[i]);
 		}
+		remappingColor *= vertexColor * vertexColor * lightColor;
 	} else
 	if(adjacentCheck(inputAlpha, 242.0)) { // 그림자 제거 (fsh 에서 제거중)
 
@@ -281,6 +329,33 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		} else {
 			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 241.0)) { // 텍스쳐 조명에 따른 투명도 변경
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0;//.275;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
+			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 240.0)) { // 텍스쳐 조명에 따른 투명도 변경
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0;//.275;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
+			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 239.0)) { // 텍스쳐 조명에 따른 투명도 변경
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0;//.275;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
+			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
 	} else
 	if(adjacentCheck(inputAlpha, 1.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive X

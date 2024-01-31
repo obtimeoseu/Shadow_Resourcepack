@@ -29,12 +29,14 @@ void main() {
 
     vertexColor = Color;
 
+    gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+
     // gui 하이라이트
     if( compareColor( Color, vec4(255, 255, 255, 128) / 255.0) ) {
         // 일반 인벤토리 하이라이트
         if( Position.z == 0 ) {
+            Pos = Position;// + vec3(corners[id] * 2 - 1, 0);
             /*
-            Pos = Position + vec3(corners[id] * 2 - 1, 0);
 
             Pos1 = Pos2 = vec2(0);
             if (id == 0) Pos1 = Pos.xy;
@@ -51,7 +53,7 @@ void main() {
         if ( Position.z == 400 ) {
             vertexColor = vec4(0.0);
         }
-        gl_Position = ProjMat * ModelViewMat * vec4(Pos, 1.0);
+        //gl_Position = ProjMat * ModelViewMat * vec4(Pos, 1.0);
     } else
 
     // 쿨다운
@@ -106,7 +108,4 @@ void main() {
             }
         }
     }
-    
-    gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
-
 }

@@ -9,6 +9,7 @@ uniform vec4 ColorModulator;
 uniform float FogStart;
 uniform float FogEnd;
 uniform vec4 FogColor;
+uniform float GameTime;
 
 in float vertexDistance;
 in vec4 vertexColor;
@@ -28,12 +29,15 @@ out vec4 fragColor;
 void main() {
 	float alpha = textureLod(Sampler0, texCoord0, 0.0).a * 255.0;
 
+    vec2 screenSize = gl_FragCoord.xy / (screenPos.xy/screenPos.w*0.5+0.5);
+    vec4 screenFragCoord = gl_FragCoord;
+
     vec4 color = showRedAndGray(texture(Sampler0, texCoord0), FogColor, isGui);
     if(!adjacentCheck(alpha, 241.0) && !adjacentCheck(alpha, 242.0) ) {
         color *= showRedAndGray(vertexColor, FogColor, isGui) * ColorModulator;
     }
 
-    color = apply_emissive_perspective_for_item(color, lightMapColor, tintColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha);
+    color = apply_emissive_perspective_for_item(color, lightMapColor, tintColor, vertexColor, vertexDistance, zPos, isGui, FogStart, FogEnd, alpha, screenSize, screenFragCoord, GameTime);
     if (color.a < 0.1) {
         discard;
     }
@@ -62,7 +66,27 @@ void main() {
 
     // 가까이 있을때 가리기
     if(isGui == 0) {
-        if(adjacentCheck(alpha, 243.0)) {
+        if(adjacentCheck(alpha, 241.0)) {
+            float dis = 0.8;
+            float blur = 0.2;
+            if(screenPos.z < dis) {
+                discard;
+            }
+            if(screenPos.z < dis + blur) {
+                fragColor.a *= (screenPos.z - dis) / blur;
+            }
+        }
+        if(adjacentCheck(alpha, 240.0)) {
+            float dis = 0.8;
+            float blur = 0.2;
+            if(screenPos.z < dis) {
+                discard;
+            }
+            if(screenPos.z < dis + blur) {
+                fragColor.a *= (screenPos.z - dis) / blur;
+            }
+        }
+        if(adjacentCheck(alpha, 239.0)) {
             float dis = 0.8;
             float blur = 0.2;
             if(screenPos.z < dis) {
