@@ -331,15 +331,6 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			remappingColor.a = 1.0;
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 241.0)) { // 텍스쳐 조명에 따른 투명도 변경
-		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
-
-		remappingColor.a = 0;//.275;
-		if(grayScaleLight > 0.5) {
-			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
-			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
-		}
-	} else
 	if(adjacentCheck(inputAlpha, 240.0)) { // 텍스쳐 조명에 따른 투명도 변경
 		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
 
@@ -350,6 +341,15 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		}
 	} else
 	if(adjacentCheck(inputAlpha, 239.0)) { // 텍스쳐 조명에 따른 투명도 변경
+		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
+
+		remappingColor.a = 0;//.275;
+		if(grayScaleLight > 0.5) {
+			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
+			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
+		}
+	} else
+	if(adjacentCheck(inputAlpha, 238.0)) { // 텍스쳐 조명에 따른 투명도 변경
 		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
 
 		remappingColor.a = 0;//.275;
