@@ -2,22 +2,23 @@
 
 #import <sodium:include/fog.glsl>
 
-in vec4 v_Vertcolor;
-in vec4 v_Lightcolor;
-
+in vec3 v_ColorModulator; // The interpolated vertex color
+in vec3 v_Vertcolor;
+in vec3 v_Lightcolor;
 in vec2 v_TexCoord; // The interpolated block texture coordinates
+
 in float v_FragDistance; // The fragment's distance from the camera
 
 in float v_MaterialMipBias;
 in float v_MaterialAlphaCutoff;
 
-uniform sampler2D u_BlockTex; // The block texture
+uniform sampler2D u_BlockTex; // The block atlas texture
 
 uniform vec4 u_FogColor; // The color of the shader fog
 uniform float u_FogStart; // The starting position of the shader fog
 uniform float u_FogEnd; // The ending position of the shader fog
 
-out vec4 fragColor; // The output fragment for the color framebuffer
+out vec4 out_FragColor; // The output fragment for the color framebuffer
 
 bool adjacentCheck(float valueA, float valueB) {
 	float compareLess = valueB - 0.01;
@@ -25,7 +26,7 @@ bool adjacentCheck(float valueA, float valueB) {
 	return (valueA > compareLess && valueA < compareMore);
 }
 
-vec4 showRedAndGray(vec4 color, inout vec4 fogColor) {
+vec4 showRedAndGray(vec4 color, inout vec4 fogColor, vec3 lightColor) {
     float gray = (color.r + color.g + color.b) / 3;
     if(fogColor.g == 0 && fogColor.b == 0) {
         
@@ -53,33 +54,61 @@ vec4 showRedAndGray(vec4 color, inout vec4 fogColor) {
     ) {
         return color;
     }
-    
+
+    color.rgb = vec3(gray);
+    return color;
+}
+vec3 showRedAndGray(vec3 color, inout vec4 fogColor, vec3 lightColor) {
+    float gray = (color.r + color.g + color.b) / 3;
+    if(fogColor.g == 0 && fogColor.b == 0) {
+        if(fogColor.r * 255 < 1) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else
+        if(fogColor.r * 255 < 2) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else
+        if(fogColor.r * 255 < 3) {
+            //color.rgb = vec3(gray);
+            //return color;
+        } else {
+            return color;
+        }
+    } else {
+        return color;
+    }
+
+    if(
+        (color.g < 0.275 && color.b < 0.425 && color.r > 0.28) ||
+        (color.g < 0.15 && color.b < 0.15 && color.r > 0.15)
+    ) {
+        return color;
+    }
+
     color.rgb = vec3(gray);
     return color;
 }
 
-
 void main() {
     vec4 fogColor = u_FogColor;
-    float fogStart = u_FogStart;
-    float fogEnd = u_FogEnd; 
+    vec4 diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor, v_Lightcolor);
+    vec3 tintColor = showRedAndGray(v_Vertcolor, fogColor, v_Lightcolor);
 
-    vec4 diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor);
-    vec4 tintColor = showRedAndGray(v_Vertcolor, fogColor);
-
+    //diffuseColor = showRedAndGray(texture(u_BlockTex, v_TexCoord, v_MaterialMipBias), fogColor, v_Lightcolor);
+    //tintColor = showRedAndGray(v_Vertcolor, fogColor, v_Lightcolor);
+    
 #ifdef USE_FRAGMENT_DISCARD
     if (diffuseColor.a < v_MaterialAlphaCutoff) {
         discard;
     }
 #endif
+    
+    // Modulate the color (used by ambient occlusion and per-vertex colouring)
+    diffuseColor.rgb *= tintColor * v_Lightcolor;
 
-    // Apply per-vertex color
-    //showRedAndGray 여기에 적용되서 한번만 작동되게 바꾸고 안개색, 안개 거리 조절도 함수 내에서 건들도록 바꾸기?
-    diffuseColor.rgb *= tintColor.rgb * v_Lightcolor.rgb;
-
-    // Apply ambient occlusion "shade" 부드러운 조명
-    diffuseColor.rgb *= tintColor.a;
-
+    float fogStart = u_FogStart;
+    float fogEnd = u_FogEnd; 
     if(fogColor.g == 0 && fogColor.b == 0) {
         if(fogColor.r * 255 < 1) {
             fogStart = 0.0;
@@ -95,5 +124,5 @@ void main() {
         }
     }
 
-    fragColor = _linearFog(diffuseColor, v_FragDistance, fogColor, fogStart, fogEnd);
+    out_FragColor = _linearFog(diffuseColor, v_FragDistance, u_FogColor, fogStart, fogEnd);
 }
