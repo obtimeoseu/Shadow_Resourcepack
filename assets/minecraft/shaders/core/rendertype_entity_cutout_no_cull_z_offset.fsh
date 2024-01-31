@@ -67,7 +67,7 @@ void main() {
     // 가까이 있을때 가리기
     if(isGui == 0) {
         if(adjacentCheck(alpha, 240.0)) {
-            float dis = 0.8;
+            float dis = 1.4;
             float blur = 0.2;
             if(screenPos.z < dis) {
                 discard;
@@ -77,24 +77,6 @@ void main() {
             }
         }
         if(adjacentCheck(alpha, 239.0)) {
-            float dis = 0.8;
-            float blur = 0.2;
-            if(screenPos.z < dis) {
-                discard;
-            }
-            if(screenPos.z < dis + blur) {
-                fragColor.a *= (screenPos.z - dis) / blur;
-            }
-        }
-        if(adjacentCheck(alpha, 238.0)) {
-            float dis = 0.8;
-            float blur = 0.2;
-            if(screenPos.z < dis) {
-                discard;
-            }
-            if(screenPos.z < dis + blur) {
-                fragColor.a *= (screenPos.z - dis) / blur;
-            }
         }
     }
 }
