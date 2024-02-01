@@ -356,7 +356,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 
 		remappingColor.a = 0;//.275;
 		if(grayScaleLight > 0.5) {
-			remappingColor.a = (grayScaleLight - 0.5) * 3;// + 0.275;
+			remappingColor.a = (grayScaleLight - 0.5) * 3 + 0.275;
 			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
 	} else
