@@ -350,6 +350,8 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		}
 	} else
 	if(adjacentCheck(inputAlpha, 238.0)) { // 텍스쳐 조명에 따른 투명도 변경
+		remappingColor = inputColor * tintColor;
+
 		float grayScaleLight = (lightColor.r + lightColor.g + lightColor.b) / 3;
 
 		remappingColor.a = 0;//.275;
