@@ -317,7 +317,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
 			remappingColor.rgb += (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP_COLORS[i]);
 		}
-		remappingColor *= vertexColor * vertexColor * lightColor;
+		//remappingColor *= vertexColor * vertexColor * lightColor;
 	} else
 	if(adjacentCheck(inputAlpha, 242.0)) { // 그림자 제거 (fsh 에서 제거중)
 
