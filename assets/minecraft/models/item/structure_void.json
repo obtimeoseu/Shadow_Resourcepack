@@ -1,9 +1,45 @@
 {
-    "parent": "minecraft:item/generated",
+	"parent": "minecraft:item/generated",
 	"textures": {
 		"layer0": "item/structure_void"
 	},
 	"overrides": [
-        { "predicate": { "custom_model_data": 1 }, "model": "shadow:item/empty"}
+		{ "predicate": { "custom_model_data": 1 }, "model": "shadow:gui/container/empty" },
+		{ "predicate": { "custom_model_data": 2 }, "model": "shadow:gui/container/beacon_altar/beacon/beacon_on_0" },
+		{ "predicate": { "custom_model_data": 3 }, "model": "shadow:gui/container/beacon_altar/beacon/beacon_on_1" },
+		{ "predicate": { "custom_model_data": 4 }, "model": "shadow:gui/container/beacon_altar/beacon/beacon_off_0" },
+		{ "predicate": { "custom_model_data": 5 }, "model": "shadow:gui/container/beacon_altar/beacon/beacon_off_1" },
+		{ "predicate": { "custom_model_data": 6 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_0" },
+		{ "predicate": { "custom_model_data": 7 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_1" },
+		{ "predicate": { "custom_model_data": 8 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_2" },
+		{ "predicate": { "custom_model_data": 9 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_3" },
+		{ "predicate": { "custom_model_data": 10 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_4" },
+		{ "predicate": { "custom_model_data": 11 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_5" },
+		{ "predicate": { "custom_model_data": 12 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_6" },
+		{ "predicate": { "custom_model_data": 13 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_7" },
+		{ "predicate": { "custom_model_data": 14 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_8" },
+		{ "predicate": { "custom_model_data": 15 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_9" },
+		{ "predicate": { "custom_model_data": 16 }, "model": "shadow:gui/container/beacon_altar/lit_progress/lit_progress_10" },
+		{ "predicate": { "custom_model_data": 17 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_0" },
+		{ "predicate": { "custom_model_data": 18 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_1" },
+		{ "predicate": { "custom_model_data": 19 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_2" },
+		{ "predicate": { "custom_model_data": 20 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_3" },
+		{ "predicate": { "custom_model_data": 21 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_4" },
+		{ "predicate": { "custom_model_data": 22 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_5" },
+		{ "predicate": { "custom_model_data": 23 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_6" },
+		{ "predicate": { "custom_model_data": 24 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_7" },
+		{ "predicate": { "custom_model_data": 25 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_8" },
+		{ "predicate": { "custom_model_data": 26 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_9" },
+		{ "predicate": { "custom_model_data": 27 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_10" },
+		{ "predicate": { "custom_model_data": 28 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_11" },
+		{ "predicate": { "custom_model_data": 29 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_12" },
+		{ "predicate": { "custom_model_data": 30 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_13" },
+		{ "predicate": { "custom_model_data": 31 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_14" },
+		{ "predicate": { "custom_model_data": 32 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_15" },
+		{ "predicate": { "custom_model_data": 33 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_16" },
+		{ "predicate": { "custom_model_data": 34 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_17" },
+		{ "predicate": { "custom_model_data": 35 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_18" },
+		{ "predicate": { "custom_model_data": 36 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_19" },
+		{ "predicate": { "custom_model_data": 37 }, "model": "shadow:gui/container/beacon_altar/shadow_bar_progress/shadow_bar_progress_20" }
 	]
 }
