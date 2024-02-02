@@ -1,6 +1,1 @@
-{
-  "sources": [
-    {"source":"entity","prefix":"entity/","type":"directory"},
-    {"source":"gui","prefix":"gui/","type":"directory"}
-  ]
-}
+{"sources":[{"source":"entity","prefix":"entity/","type":"directory"}]}
