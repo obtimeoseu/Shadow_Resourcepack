@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "shadow:gui/container/beacon_altar/beacon_bar_progress/beacon_bar_off_progress_35"
+	},
+	"gui_light": "front",
+	"elements": [ 	 
+		{
+			"from": [ -16, -16, 16 ],
+			"to": [ 32, 32, 16.0625 ],
+			"faces": {
+				"north": { "uv": [ 16, 16, 0, 0 ], "texture": "#texture", "rotation": 180 },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" }
+			}
+		}
+	],
+	"display": {
+		"firstperson_lefthand": {
+			"scale":  [ 0.0, 0.0, 0.0 ]
+		},
+		"firstperson_righthand": {
+			"scale":  [ 0.0, 0.0, 0.0 ]
+		},
+		"thirdperson_lefthand": {
+			"scale":  [ 0.0, 0.0, 0.0 ]
+		},
+		"thirdperson_righthand": {
+			"scale":  [ 0.0, 0.0, 0.0 ]
+		},
+		"gui": {
+			"translation":  [ 67, -19, -80 ],
+			"scale":  [ 0.625, 3, 3.375 ]
+		}
+	}
+}
