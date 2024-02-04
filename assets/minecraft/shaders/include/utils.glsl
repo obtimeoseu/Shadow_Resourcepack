@@ -146,16 +146,6 @@ vec4 get_customEmssiveColor(vec4 inputColor, vec4 lightColor, vec4 emssiveColor)
 vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 tintColor, vec4 vertexColor, float vertexDistance, float zPos, int isGui, float FogStart, float FogEnd, float inputAlpha, vec2 screenSize, vec4 screenFragCoord, float gameTime) {
 	vec4 remappingColor = inputColor * tintColor * lightColor;
 
-	// 염색 색에 따라 데미지 입는 색 설정
-	//if(compareColor(tintColor.rgb, vec3(254, 254, 254) / 255.0)) {
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 1.0, 1.0), 0.2) * lightColor.rgb;    // 일반
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 1.0, 0.65), 0.25) * lightColor.rgb;   // 전기
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(0.5, 0.7, 1.0), 0.25) * lightColor.rgb;    // 얼음
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(0.5, 0.1, 0.6), 0.25) * lightColor.rgb;    // 독
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 0.5, 0.3), 0.25) * lightColor.rgb;    // 불
-		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 0.25, 0.25), 0.4) * lightColor.rgb;   // 크리티컬
-	//}
-
 	if(adjacentCheck(inputAlpha, 255.0)) {        // GUI O | FirstPerson O | ThirdPerson O | Emssive X
 		// Default
 	} else
@@ -382,6 +372,20 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	//		remappingColor.a = 1.0;
 	//	}
 	//}
+
+	// 염색 색에 따라 데미지 입는 색 설정
+	if(compareColor(tintColor.rgb, vec3(255, 102, 102) / 255.0)) {
+		remappingColor /= tintColor;
+		remappingColor.rgb = mix(remappingColor.rgb, vec3(1.0, 0.25, 0.25), 0.4);   // 바닐라
+		
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 1.0, 1.0), 0.2) * lightColor.rgb;    // 흰색
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 1.0, 0.65), 0.25) * lightColor.rgb;   // 전기
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(0.5, 0.7, 1.0), 0.25) * lightColor.rgb;    // 얼음
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(0.5, 0.1, 0.6), 0.25) * lightColor.rgb;    // 독
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 0.5, 0.3), 0.25) * lightColor.rgb;    // 불
+		//remappingColor.rgb = mix(inputColor.rgb, vec3(1.0, 0.25, 0.25) * lightColor.rgb;    // 바닐라
+	}
+
 	return remappingColor;
 }
 
