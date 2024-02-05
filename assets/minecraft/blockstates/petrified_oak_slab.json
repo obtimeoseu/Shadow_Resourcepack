@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "shadow:block/candle_block_slab"
+    },
+    "type=double": {
+      "model": "shadow:block/candle_block"
+    },
+    "type=top": {
+      "model": "shadow:block/candle_block_top"
+    }
+  }
+}
