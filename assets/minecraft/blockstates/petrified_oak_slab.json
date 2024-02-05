@@ -7,7 +7,7 @@
       "model": "shadow:block/candle_block"
     },
     "type=top": {
-      "model": "shadow:block/candle_block_top"
+      "model": "shadow:block/candle_block_slab_top"
     }
   }
 }
