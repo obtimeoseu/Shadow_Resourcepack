@@ -1,0 +1,33 @@
+{
+	"credit": "옵티머스",
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"1": "shadow:block/shadow_vein",
+		"particle": "shadow:block/shadow_vein"
+	},
+	"elements": [
+		{
+			"name": "shadow_vein",
+			"from": [0, -16, 0],
+			"to": [16, 0, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "shadow_vein",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0]
+		}
+	]
+}
