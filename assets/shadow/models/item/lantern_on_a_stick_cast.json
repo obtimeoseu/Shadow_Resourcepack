@@ -1,0 +1,6 @@
+{
+    "parent": "shadow:item/lantern_on_a_stick",
+    "textures": {
+		"layer0": "shadow:item/lantern_on_a_stick_cast"
+    }
+}
