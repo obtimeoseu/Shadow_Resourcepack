@@ -5,8 +5,7 @@
 	},
 	"overrides": [
         { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/shadow_sensor_off"},
-        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/shadow_sensor_on"},
-        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/shadow_sensor_on"},
         { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/"},
