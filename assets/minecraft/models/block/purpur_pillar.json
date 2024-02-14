@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "shadow:block/candle_pillar_top",
+    "side": "shadow:block/candle_pillar"
+  }
+}
