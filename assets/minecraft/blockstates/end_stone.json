@@ -1,102 +1,137 @@
 {
   "variants": {
     "": [
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_0"
-      },
-      {
-        "model": "shadow:block/shadow_block_1"
-      },
-      {
-        "model": "shadow:block/shadow_block_2"
-      },
-      {
-        "model": "shadow:block/shadow_block_3"
-      },
-      {
-        "model": "shadow:block/shadow_block_4"
-      },
-      {
-        "model": "shadow:block/shadow_block_5"
-      },
-      {
-        "model": "shadow:block/shadow_block_6"
-      },
-      {
-        "model": "shadow:block/shadow_block_7"
-      }
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"}
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_0"},
+      {"model": "shadow:block/shadow_block_1"},
+      {"model": "shadow:block/shadow_block_2"},
+      {"model": "shadow:block/shadow_block_3"},
+      {"model": "shadow:block/shadow_block_4"},
+      {"model": "shadow:block/shadow_block_5"},
+      {"model": "shadow:block/shadow_block_6"},
+      {"model": "shadow:block/shadow_block_7"}
     ]
   }
 }

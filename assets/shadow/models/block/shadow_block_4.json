@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "shadow:block/shadow_block_4"
+    "all": "shadow:block/shadow_block_4_animation"
   }
 }
