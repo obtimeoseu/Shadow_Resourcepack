@@ -2,8 +2,8 @@
 	"credit": "옵티머스",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "shadow:furniture/glow_pressure_plate",
-		"particle": "shadow:furniture/glow_pressure_plate"
+		"0": "shadow:block/glow_pressure_plate",
+		"particle": "shadow:block/glow_pressure_plate"
 	},
 	"elements": [
 		{

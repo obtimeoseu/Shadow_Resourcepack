@@ -15,7 +15,7 @@
         { "predicate": { "custom_model_data": 1007}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1008}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
-        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/lantern_on_a_stick"},
+        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1011}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1012}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1013}, "model": "shadow:item/"},
