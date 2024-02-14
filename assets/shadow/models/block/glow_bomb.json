@@ -1,10 +1,10 @@
 {
-	"parent": "block/block",
 	"credit": "옵티머스",
 	"parent": "block/block",
 	"texture_size": [128, 128],
 	"textures": {
 		"1": "shadow:block/glow_bomb",
+		"2": "shadow:block/glow_bomb_animation",
 		"particle": "shadow:block/glow_bomb"
 	},
 	"elements": [
@@ -14,10 +14,10 @@
 			"to": [16, 11, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, -1, 8]},
 			"faces": {
-				"north": {"uv": [2, 2, 4, 3.375], "texture": "#1"},
-				"east": {"uv": [0, 2, 2, 3.375], "texture": "#1"},
-				"south": {"uv": [6, 2, 8, 3.375], "texture": "#1"},
-				"west": {"uv": [4, 2, 6, 3.375], "texture": "#1"},
+				"north": {"uv": [0, 3, 16, 14], "texture": "#2"},
+				"east": {"uv": [0, 3, 16, 14], "texture": "#2"},
+				"south": {"uv": [0, 3, 16, 14], "texture": "#2"},
+				"west": {"uv": [0, 3, 16, 14], "texture": "#2"},
 				"up": {"uv": [4, 2, 2, 0], "texture": "#1"},
 				"down": {"uv": [6, 0, 4, 2], "texture": "#1"}
 			}

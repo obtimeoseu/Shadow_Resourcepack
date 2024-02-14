@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "shadow:block/glow_bomb"
+      },
+      {
+        "model": "shadow:block/glow_bomb",
+        "y": 90
+      },
+      {
+        "model": "shadow:block/glow_bomb",
+        "y": 180
+      },
+      {
+        "model": "shadow:block/glow_bomb",
+        "y": 270
+      }
+    ]
+  }
+}
