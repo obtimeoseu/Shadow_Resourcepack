@@ -368,7 +368,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 239.0)) { // 엔드 포탈 효과 빨강
+	if(adjacentCheck(inputAlpha, 237.0)) { // 엔드 포탈 효과 빨강
 		remappingColor.a = 1.0;
 		remappingColor.rgb =  vec3(1, 1, 1);
 		for (int i = 6; i < 16; i++) {
