@@ -31,6 +31,14 @@ TEXT_POSITION_CASE(236) {
     textData.position.y += 31;
 }
 
+TEXT_POSITION_CASE(232) {
+    textData.position.x -= floor(textData.scrSize.x / 2);
+    textData.position.y += floor(textData.scrSize.y / 2);
+    
+    textData.position.x -= 96;
+    textData.position.y += 33;
+}
+
 TEXT_POSITION_CASE(220) {
     textData.position.y += 10;
 }
