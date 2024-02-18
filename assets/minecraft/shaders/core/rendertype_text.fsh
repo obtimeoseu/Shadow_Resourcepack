@@ -216,6 +216,14 @@ void main() {
                 }
             }
             break;
+            case 8:
+            {
+                color = vec4(0);
+                float alpha = 1 - ((gl_FragCoord.y * (12 - vertexColor.a * 6)) / ScreenSize.y ) + vertexColor.a;
+                if(alpha < 0.02) {alpha = 0.02;}
+                color = vec4(0, 0, 0, alpha);
+            }
+            break;
             case 32:
             {
                 color = vec4(0);
@@ -226,7 +234,7 @@ void main() {
             break;
         }
         fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
-        if (color.a < 0.1) {
+        if (color.a < 0.01) {
             discard;
         }
     } else {
