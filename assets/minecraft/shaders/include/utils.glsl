@@ -319,7 +319,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	} else
 	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과 빨강
 		remappingColor.a = 1.0;
-		remappingColor.rgb = EP_COLORS[0] * vec3(0, 0, 0);
+		remappingColor.rgb = vec3(0, 0, 0);
 		for (int i = 6; i < 16; i++) {
 			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
 			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
@@ -370,7 +370,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	} else
 	if(adjacentCheck(inputAlpha, 239.0)) { // 엔드 포탈 효과 빨강
 		remappingColor.a = 1.0;
-		remappingColor.rgb =  vec3(1, 1, 1);//EP_COLORS[0] * vec3(0, 0, 0);
+		remappingColor.rgb =  vec3(1, 1, 1);
 		for (int i = 6; i < 16; i++) {
 			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
 			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
