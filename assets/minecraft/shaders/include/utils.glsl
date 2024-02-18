@@ -51,6 +51,24 @@ const vec3[] EP_COLORS = vec3[](
     vec3(0.302066 * 3, 0.390010 / 3, 0.204675),
     vec3(0.661491 * 3, 0.314821 / 3, 0.080955)
 );
+const vec3[] EP2_COLORS = vec3[](
+    vec3(0.110818 * 3, 0.098399 / 3, 0.022087),
+    vec3(0.089485 * 3, 0.095924 / 3, 0.011892),
+    vec3(0.100326 * 3, 0.101689 / 3, 0.027636),
+    vec3(0.114838 * 3, 0.109883 / 3, 0.046564),
+    vec3(0.097189 * 3, 0.117696 / 3, 0.064901),
+    vec3(0.123646 * 3, 0.086895 / 3, 0.063761),
+    vec3(0.166380 * 3, 0.111994 / 3, 0.084817),
+    vec3(0.091064 * 3, 0.154120 / 3, 0.097489),
+    vec3(0.195191 * 3, 0.131144 / 3, 0.106152),
+    vec3(0.187229 * 3, 0.110188 / 3, 0.097721),
+    vec3(0.148582 * 3, 0.138278 / 3, 0.133516),
+    vec3(0.235792 * 3, 0.243332 / 3, 0.070006),
+    vec3(0.214696 * 3, 0.142899 / 3, 0.196766),
+    vec3(0.321970 * 3, 0.315338 / 3, 0.047281),
+    vec3(0.302066 * 3, 0.390010 / 3, 0.204675),
+    vec3(0.661491 * 3, 0.314821 / 3, 0.080955)
+);
 
 const mat4 EP_SCALE_TRANSLATE = mat4(
     0.6, 0.0, 0.0, 0.25,
@@ -299,7 +317,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			}
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과
+	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과 빨강
 		remappingColor.a = 1.0;
 		remappingColor.rgb = EP_COLORS[0] * vec3(0, 0, 0);
 		for (int i = 6; i < 16; i++) {
@@ -349,6 +367,16 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			remappingColor.a = (grayScaleLight - 0.5) * 3 + 0.275;
 			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
+	} else
+	if(adjacentCheck(inputAlpha, 239.0)) { // 엔드 포탈 효과 빨강
+		remappingColor.a = 1.0;
+		remappingColor.rgb =  vec3(1, 1, 1);//EP_COLORS[0] * vec3(0, 0, 0);
+		for (int i = 6; i < 16; i++) {
+			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
+			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
+			remappingColor.rgb -= (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP2_COLORS[i]);
+		}
+		//remappingColor *= vertexColor * vertexColor * lightColor;
 	} else
 	if(adjacentCheck(inputAlpha, 1.0)) { // GUI O | FirstPerson X | ThirdPerson X | Emssive X
 		if(isGui == 1) {
