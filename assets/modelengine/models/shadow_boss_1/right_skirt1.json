@@ -1,0 +1,1 @@
+{"textures":{"0":"shadow:entity/shadow_boss"},"elements":[{"from":[8.0,-12.0,-2.5],"to":[8.0,8.0,17.5],"faces":{"east":{"uv":[4.3125,5.4375,4.9375,6.0625],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[4.9375,5.4375,5.5625,6.0625],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[30,225,0]}}}
