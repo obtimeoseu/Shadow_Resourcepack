@@ -219,7 +219,7 @@ void main() {
             case 8:
             {
                 color = vec4(0);
-                float alpha = 1 - ((gl_FragCoord.y * (12 - vertexColor.a * 6)) / ScreenSize.y ) + vertexColor.a;
+                float alpha = 1 - ((gl_FragCoord.y * (12 - vertexColor.a * 7)) / ScreenSize.y ) + vertexColor.a;
                 if(alpha < 0.02) {alpha = 0.02;}
                 color = vec4(0, 0, 0, alpha);
             }
