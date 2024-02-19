@@ -12,7 +12,7 @@ TEXT_POSITION_CASE(244) {
     textData.position.y += floor(textData.scrSize.y / 2);
     
     textData.position.x -= 96;
-    textData.position.y += 27;
+    textData.position.y += 37;
 }
 
 TEXT_POSITION_CASE(240) {
@@ -20,7 +20,7 @@ TEXT_POSITION_CASE(240) {
     textData.position.y += floor(textData.scrSize.y / 2);
     
     textData.position.x -= 96;
-    textData.position.y += 29;
+    textData.position.y += 39;
 }
 
 TEXT_POSITION_CASE(236) {
@@ -28,7 +28,7 @@ TEXT_POSITION_CASE(236) {
     textData.position.y += floor(textData.scrSize.y / 2);
     
     textData.position.x -= 96;
-    textData.position.y += 31;
+    textData.position.y += 41;
 }
 
 TEXT_POSITION_CASE(232) {
@@ -36,7 +36,7 @@ TEXT_POSITION_CASE(232) {
     textData.position.y += floor(textData.scrSize.y / 2);
     
     textData.position.x -= 96;
-    textData.position.y += 33;
+    textData.position.y += 43;
 }
 
 TEXT_POSITION_CASE(220) {
