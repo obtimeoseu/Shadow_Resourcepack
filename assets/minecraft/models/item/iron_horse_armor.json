@@ -1,0 +1,10 @@
+{
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "item/iron_horse_armor"
+	},
+	"overrides": [
+        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/candle_helmet_off"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/candle_helmet_on"}
+	]
+}
