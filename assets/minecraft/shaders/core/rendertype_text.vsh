@@ -11,6 +11,9 @@ in ivec2 UV2;
 uniform sampler2D Sampler0;
 uniform sampler2D Sampler2;
 
+uniform float FogStart;
+uniform float FogEnd;
+
 uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
 uniform mat3 IViewRotMat;
@@ -101,6 +104,19 @@ void main() {
     if(lightColor.r > 0.985) lightColor.r = 1.0;
     if(lightColor.g > 0.985) lightColor.g = 1.0;
     if(lightColor.b > 0.985) lightColor.b = 1.0;
+
+    vert = gl_VertexID % 4;
+    vec2 corner = vec2[](vec2(-1.0, +1.0), vec2(-1.0, -1.0), vec2(+1.0, -1.0), vec2(+1.0, +1.0))[vert];
+    coord  = vec2[](vec2(0), vec2(0, 1), vec2(1), vec2(1, 0))[vert];
+    
+    uvpos1 = uvpos2 = uvpos3 = uvpos4 = ipos1 = ipos2 = ipos3 = ipos4 = vec3(0.0);
+
+    // 스크린 이펙트 기본 변수 설정
+    p1 = p2 = vec2(0);
+    p = 0;
+
+    texCoord0 = UV0;
+    vertexDistance = length((ModelViewMat * vec4(position, 1.0)).xyz);
 
     // 기본 gl_Position 세팅 (스크린 이펙트용 특수 gl_Position 세팅 코드 내장)
     if (Color.xyz == vec3(251, 255, 255) / 255) {
@@ -202,6 +218,28 @@ void main() {
         //    isShadow = 1.0;
         //}
     }
+    if(FogStart > FogEnd) {
+        //if(vertexDistance < 800) {
+            //applyTextEffect = 1.0;
+            //textData.applyTextEffect = true;
+            //vertexColor.r = 0.0;
+            //baseColor = vertexColor;
+        //} else {
+            //applyTextEffect = 1.0;
+            //textData.applyTextEffect = true;
+            //vertexColor.r = 0.0;
+        //}
+    } else {
+        // 월드상에 있는 텍스트, 지도
+        // 손에 들고 있는 지도는 제외함
+        applyTextEffect = 0.0;
+        textData.applyTextEffect = false;
+        //vertexColor.r = 1.0;
+        //vertexColor.g = 0.0;
+        //vertexColor.b = 0.0;
+        //baseColor = vertexColor;
+    }
+
 
     conditionColor = ivec3(
         int(round(baseColor.r * 255.0) / 4),
@@ -272,18 +310,6 @@ void main() {
         }
     }
 
-    vert = gl_VertexID % 4;
-    vec2 corner = vec2[](vec2(-1.0, +1.0), vec2(-1.0, -1.0), vec2(+1.0, -1.0), vec2(+1.0, +1.0))[vert];
-    coord  = vec2[](vec2(0), vec2(0, 1), vec2(1), vec2(1, 0))[vert];
-    
-    uvpos1 = uvpos2 = uvpos3 = uvpos4 = ipos1 = ipos2 = ipos3 = ipos4 = vec3(0.0);
-
-    // 스크린 이펙트 기본 변수 설정
-    p1 = p2 = vec2(0);
-    p = 0;
-
-    texCoord0 = UV0;
-    vertexDistance = length((ModelViewMat * vec4(position, 1.0)).xyz);
     vertexColor *= lightColor;
 
     if(textureSize(Sampler0, 0) == ivec2(256, 256)) { // 지도 제외
@@ -329,7 +355,7 @@ void main() {
         else if (alpha == 5)
             p = 32;
 
-        if (p != 0 && Position.z >= 0)
+        if (p != 0 && Position.z >= 0 && isShadow != 1.0)
         {   
             texCoord0 = vec2(UV0 - coord * 56 / 256);
 
