@@ -6,6 +6,10 @@
         },
         {
             "type": "reference",
+            "id": "minecraft:include/dialogue"
+        },
+        {
+            "type": "reference",
             "id": "minecraft:include/hud"
         },
         {
