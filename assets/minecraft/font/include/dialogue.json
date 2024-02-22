@@ -2,7 +2,7 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "custom:font/arrow_down.png",
+      "file": "shadow:dialogue/button/arrow_down.png",
       "ascent": 3,
       "height": 5,
       "chars": [
@@ -11,7 +11,7 @@
     },
     {
       "type": "bitmap",
-      "file": "custom:font/circle.png",
+      "file": "shadow:dialogue/button/circle.png",
       "ascent": 2,
       "height": 6,
       "chars": [
@@ -21,7 +21,7 @@
     
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_0.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_0.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -30,7 +30,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_1.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_1.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -39,7 +39,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_2.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_2.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -48,7 +48,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_3.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_3.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -57,7 +57,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_4.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_4.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -66,7 +66,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_5.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_5.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -75,7 +75,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_6.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_6.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -84,7 +84,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_7.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_7.png",
       "ascent": -58,
       "height": 64,
       "chars": [
@@ -93,7 +93,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_8.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_8.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -102,7 +102,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_9.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_9.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -111,7 +111,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_10.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_10.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -120,7 +120,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_11.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_11.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -129,7 +129,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_12.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_12.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -138,7 +138,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_13.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_13.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -147,7 +147,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_14.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_14.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -156,7 +156,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_15.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_15.png",
       "ascent": -122,
       "height": 64,
       "chars": [
@@ -165,7 +165,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_16.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_16.png",
       "ascent": -186,
       "height": 64,
       "chars": [
@@ -174,7 +174,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_17.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_17.png",
       "ascent": -186,
       "height": 64,
       "chars": [
@@ -183,7 +183,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_18.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_18.png",
       "ascent": -186,
       "height": 64,
       "chars": [
@@ -192,7 +192,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_19.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_19.png",
       "ascent": -186,
       "height": 64,
       "chars": [
@@ -201,7 +201,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_20.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_20.png",
       "ascent": -177,
       "height": 64,
       "chars": [
@@ -210,7 +210,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_21.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_21.png",
       "ascent": -177,
       "height": 64,
       "chars": [
@@ -219,7 +219,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_22.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_22.png",
       "ascent": -177,
       "height": 64,
       "chars": [
@@ -228,7 +228,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_23.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_23.png",
       "ascent": -177,
       "height": 64,
       "chars": [
@@ -237,7 +237,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_24.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_24.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -246,7 +246,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_25.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_25.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -255,7 +255,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_26.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_26.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -264,7 +264,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_27.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_27.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -273,7 +273,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_28.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_28.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -282,7 +282,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_29.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_29.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -291,7 +291,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_30.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_30.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -300,7 +300,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_31.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_31.png",
       "ascent": -241,
       "height": 64,
       "chars": [
@@ -309,7 +309,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_32.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_32.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -318,7 +318,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_33.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_33.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -327,7 +327,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_34.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_34.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -336,7 +336,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_35.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_35.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -345,7 +345,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_36.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_36.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -354,7 +354,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_37.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_37.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -363,7 +363,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_38.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_38.png",
       "ascent": -305,
       "height": 64,
       "chars": [
@@ -372,7 +372,7 @@
     },
     {
       "type": "bitmap",
-      "file": "shadow:dialogue/intro_0/intro_39.png",
+      "file": "shadow:dialogue/image/intro_0/intro_0_39.png",
       "ascent": -305,
       "height": 64,
       "chars": [
