@@ -2,6 +2,15 @@
   "providers": [
     {
       "type": "bitmap",
+      "file": "shadow:dialogue/button/x_mark.png",
+      "ascent": 2,
+      "height": 6,
+      "chars": [
+          "◫"
+      ]
+    },
+    {
+      "type": "bitmap",
       "file": "shadow:dialogue/button/arrow_down.png",
       "ascent": 3,
       "height": 5,

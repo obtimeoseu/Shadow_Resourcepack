@@ -15,12 +15,23 @@ TEXT_EFFECT_CASE(244) { // 흰색
     draw_shadow();
 }
 
-TEXT_EFFECT_CASE(240) { // 회색
+TEXT_EFFECT_CASE(240) { // 밝은 회색
     override_text_color(vec3(255, 255, 255) / 255.0 * 0.75);
     draw_shadow();
 }
 
-TEXT_EFFECT_CASE(236) {
+TEXT_EFFECT_CASE(236) { // 보통 회색
+    override_text_color(vec3(255, 255, 255) / 255.0 * 0.5);
+    draw_shadow();
+}
+
+TEXT_EFFECT_CASE(232) { // 어두운 회색
+    override_text_color(vec3(255, 255, 255) / 255.0 * 0.25);
+    draw_shadow();
+}
+
+TEXT_EFFECT_CASE(228) { // 테스트 맘대로 바꿔도됨
+    
     override_text_color(vec3(255, 255, 255) / 255.0);
     //apply_waving_movement(0.4);
     apply_shaking_movement();
