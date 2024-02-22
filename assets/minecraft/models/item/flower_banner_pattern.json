@@ -16,6 +16,7 @@
         { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"},
 
-        { "predicate": { "custom_model_data": 2000}, "model": "shadow:block/test_block"}
+        { "predicate": { "custom_model_data": 2000}, "model": "shadow:block/test_block"},
+        { "predicate": { "custom_model_data": 2001}, "model": "shadow:item/flame"}
 	]
 }
