@@ -6,7 +6,16 @@
             "ascent": 3,
             "height": 5,
             "chars": [
-                "◬"
+                "◬◭"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "custom:font/circle.png",
+            "ascent": 2,
+            "height": 6,
+            "chars": [
+                "◮◯"
             ]
         },
         {

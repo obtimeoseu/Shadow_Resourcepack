@@ -40,6 +40,10 @@ vec4 showRedAndGray(vec4 color, inout vec4 fogColor) {
         if(fogColor.r * 255 < 3) {
             //color.rgb = vec3(gray);
             //return color;
+        } else
+        if(fogColor.r * 255 < 4) {
+            //color.rgb = vec3(gray);
+            //return color;
         } else {
             return color;
         }
@@ -92,6 +96,9 @@ void main() {
         if(fogColor.r * 255 < 3) {
             fogStart = 30.0;
             fogEnd = 80.0;
+        }
+        if(fogColor.r * 255 < 4) {
+
         }
     }
 
