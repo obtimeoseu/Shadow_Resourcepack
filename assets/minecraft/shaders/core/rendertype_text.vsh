@@ -329,7 +329,7 @@ void main() {
         else if (alpha == 5)
             p = 32;
 
-        if (p != 0 && Position.z > 0)
+        if (p != 0 && Position.z >= 0)
         {   
             texCoord0 = vec2(UV0 - coord * 56 / 256);
 

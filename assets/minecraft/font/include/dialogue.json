@@ -22,7 +22,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_0.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf600"
@@ -31,7 +31,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_1.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf601"
@@ -40,7 +40,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_2.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf602"
@@ -49,7 +49,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_3.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf603"
@@ -58,7 +58,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_4.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf604"
@@ -67,7 +67,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_5.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf605"
@@ -76,7 +76,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_6.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf606"
@@ -85,7 +85,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_7.png",
-      "ascent": 0,
+      "ascent": -58,
       "height": 64,
       "chars": [
           "\uf607"
@@ -94,7 +94,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_8.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf608"
@@ -103,7 +103,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_9.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf609"
@@ -112,7 +112,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_10.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60a"
@@ -121,7 +121,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_11.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60b"
@@ -130,7 +130,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_12.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60c"
@@ -139,7 +139,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_13.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60d"
@@ -148,7 +148,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_14.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60e"
@@ -157,7 +157,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_15.png",
-      "ascent": 0,
+      "ascent": -122,
       "height": 64,
       "chars": [
           "\uf60f"
@@ -166,7 +166,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_16.png",
-      "ascent": 0,
+      "ascent": -186,
       "height": 64,
       "chars": [
           "\uf610"
@@ -175,7 +175,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_17.png",
-      "ascent": 0,
+      "ascent": -186,
       "height": 64,
       "chars": [
           "\uf611"
@@ -184,7 +184,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_18.png",
-      "ascent": 0,
+      "ascent": -186,
       "height": 64,
       "chars": [
           "\uf612"
@@ -193,7 +193,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_19.png",
-      "ascent": 0,
+      "ascent": -186,
       "height": 64,
       "chars": [
           "\uf613"
@@ -202,7 +202,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_20.png",
-      "ascent": 0,
+      "ascent": -177,
       "height": 64,
       "chars": [
           "\uf614"
@@ -211,7 +211,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_21.png",
-      "ascent": 0,
+      "ascent": -177,
       "height": 64,
       "chars": [
           "\uf615"
@@ -220,7 +220,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_22.png",
-      "ascent": 0,
+      "ascent": -177,
       "height": 64,
       "chars": [
           "\uf616"
@@ -229,7 +229,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_23.png",
-      "ascent": 0,
+      "ascent": -177,
       "height": 64,
       "chars": [
           "\uf617"
@@ -238,7 +238,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_24.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf618"
@@ -247,7 +247,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_25.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf619"
@@ -256,7 +256,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_26.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61a"
@@ -265,7 +265,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_27.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61b"
@@ -274,7 +274,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_28.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61c"
@@ -283,7 +283,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_29.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61d"
@@ -292,7 +292,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_30.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61e"
@@ -301,7 +301,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_31.png",
-      "ascent": 0,
+      "ascent": -241,
       "height": 64,
       "chars": [
           "\uf61f"
@@ -310,7 +310,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_32.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf620"
@@ -319,7 +319,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_33.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf621"
@@ -328,7 +328,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_34.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf622"
@@ -337,7 +337,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_35.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf623"
@@ -346,7 +346,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_36.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf624"
@@ -355,7 +355,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_37.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf625"
@@ -364,7 +364,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_38.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf626"
@@ -373,7 +373,7 @@
     {
       "type": "bitmap",
       "file": "shadow:dialogue/intro_0/intro_39.png",
-      "ascent": 0,
+      "ascent": -305,
       "height": 64,
       "chars": [
           "\uf627"
