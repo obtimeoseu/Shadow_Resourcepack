@@ -1,10 +1,10 @@
 {
     "parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "item/nether_star"
+		"layer0": "item/blaze_rod"
 	},
 	"overrides": [
-        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/beacon_crystal"},
+        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/flame"},
         { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/"},

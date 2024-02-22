@@ -5,9 +5,9 @@
 	},
 	"overrides": [
         { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/shadow_piece"},
-        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/shadow_lump"},
-        { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/shadow_eye"},
-        { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/shadow_bunch_of_pieces"},
+        { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/shadow_lump"},
+        { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/shadow_eye"},
         { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1005}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1006}, "model": "shadow:item/"},
