@@ -1,0 +1,21 @@
+{
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "item/nether_star"
+	},
+	"overrides": [
+        { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/beacon_crystal"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1005}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1006}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1007}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1008}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"},
+
+        { "predicate": { "custom_model_data": 2000}, "model": "shadow:block/flame"}
+	]
+}
