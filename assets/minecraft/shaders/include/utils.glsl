@@ -411,7 +411,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 				remappingColor.a = 1.0; // 투명도 강제 조정
 			}
 		}
-		remappingColor.rgb = mix(remappingColor.rgb, vec3(1.0, 1.0, 1.0), 0.1); // 명도 조정
+		remappingColor.rgb = mix(remappingColor.rgb, vec3(1.0, 1.0, 1.0), 0.4); // 명도 조정
 	}
 	// 피격 효과
 	if(compareColor(tintColor.rgb, vec3(255, 102, 102) / 255.0)) {
