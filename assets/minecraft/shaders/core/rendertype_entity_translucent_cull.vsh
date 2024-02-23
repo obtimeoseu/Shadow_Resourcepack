@@ -49,7 +49,7 @@ void main() {
     screenPos = gl_Position;
 
     if(tintColor.rgb == vec3(255, 255, 254) / 255.0) {
-        gl_Position.z = 0 + gl_Position.z * 0.01;
+        gl_Position.z = 0 + gl_Position.z * 0.1;
     }
     
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
