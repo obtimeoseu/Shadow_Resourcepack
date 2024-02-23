@@ -210,6 +210,10 @@ void main() {
 			gl_Position = ProjMat * ModelViewMat * vec4(inverse(IViewRotMat) * wpos, 1.0);
     	screenPos = gl_Position;
 
+			if(tintColor.rgb == vec3(255, 255, 254) / 255.0) {
+					gl_Position.x += 1;
+			}
+
 			UVout = origins[2 * (partId - 1) + outerLayer];
 			UVout2 = origins[2 * (partId - 1)];
 

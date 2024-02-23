@@ -45,6 +45,10 @@ void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
     screenPos = gl_Position;
 
+    if(tintColor.rgb == vec3(255, 255, 254) / 255.0) {
+        gl_Position.z = 0;
+    }
+
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
     lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0), isGui);
