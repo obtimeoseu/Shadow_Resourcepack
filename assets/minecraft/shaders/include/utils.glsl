@@ -401,15 +401,16 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	//	}
 	//}
 
-	// 염색 색에 따라 데미지 입는 색 설정
+	// 발광 효과
 	if(compareColor(tintColor.rgb, vec3(255, 255, 254) / 255.0)) {
 		remappingColor /= tintColor;
-		remappingColor.rgb = mix(remappingColor.rgb, vec3(1.0, 1.0, 1.0), 0.2);
-		//remappingColor.rgb *= 2;
+		remappingColor.rgb = mix(remappingColor.rgb, vec3(1.0, 1.0, 1.0), 0.1);
+		remappingColor.rgb *= 1.5;
 		if(inputColor.a > 0) {
 			remappingColor.a = 1.0;
 		}
 	}
+	// 피격 효과
 	if(compareColor(tintColor.rgb, vec3(255, 102, 102) / 255.0)) {
 		remappingColor /= tintColor;
 		remappingColor /= inputColor;
