@@ -211,7 +211,7 @@ void main() {
     	screenPos = gl_Position;
 
 			if(tintColor.rgb == vec3(255, 255, 254) / 255.0) {
-					gl_Position.x += 1;
+					//gl_Position.z = 0 + gl_Position.z * 0.001;
 			}
 
 			UVout = origins[2 * (partId - 1) + outerLayer];
