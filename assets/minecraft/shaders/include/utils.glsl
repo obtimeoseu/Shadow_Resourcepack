@@ -406,7 +406,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 		remappingColor /= tintColor;
 		if(!adjacentCheck(inputAlpha, 241.0) && !adjacentCheck(inputAlpha, 237.0) && !adjacentCheck(inputAlpha, 243.0)) { // 완전 발광 적용하고 있는 텍스쳐 부분 제외
 			remappingColor /= lightColor; // 조명 조정
-			//remappingColor.rgb *= 1.25; // 채도 조정
+			remappingColor.rgb *= 1.35; // 채도 조정
 			if(inputColor.a > 0) {
 				remappingColor.a = 1.0; // 투명도 강제 조정
 			}
