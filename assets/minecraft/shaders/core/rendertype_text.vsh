@@ -363,5 +363,8 @@ void main() {
             gl_Position.zw = vec2(-1, 1); // 우선순위 
             vertexColor = Color;
         }
+        if(p == 7) {
+            gl_Position.zw = vec2(0, 1); // 우선순위 최하위
+        }
     }
 }

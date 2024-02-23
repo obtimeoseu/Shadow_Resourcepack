@@ -79,9 +79,118 @@ struct TextData {
     bool isMoved;
 };
 
+const float tentacleIntensity = 0.275;
+const float tentacleCount = 10.;
+const float tentacleWiggle = 0.5;
+const float tentacleInOutA = 1.0;
+const float tentacleInOutF = 1.5;
+const float tentacleLimit = 0.4;
+
+const float tentacleFade = 0.5;
+
 TextData textData;
 
 #moj_import <custom_text/custom_text.glsl>
+
+int rand3(vec3 uv, int seed) {
+	return int(4769.*fract(cos(floor(uv.y-5234.)*755.)*245.* sin(floor(uv.x-534.)*531.)*643.)*sin(floor(uv.z-53345.)*765.)*139.);
+}
+
+float fade(float t) {
+	return t * t * t * (t * (t * 6. - 15.) + 10.);
+}
+
+float lerp(float a, float b, float t) {
+	return a + fade(t) * (b - a);
+}
+
+vec3 randVec3(vec3 uv, int seed) {
+	int a = rand3(uv, seed)*5237;
+    int p1 = (a & 1) * 2 - 1;
+    int p2 = (a & 2) - 1;
+    int p3 = (a & 4) / 2 - 1;
+    return vec3(p1, p2, p3);
+}
+
+float perlin3D(vec3 uv, int seed) {
+	vec3 fuv = fract(uv);
+    float c1 = dot(fuv - vec3(0, 0, 0), randVec3(floor(uv) + vec3(0, 0, 0), seed));
+    float c2 = dot(fuv - vec3(0, 0, 1), randVec3(floor(uv) + vec3(0, 0, 1), seed));
+    float c3 = dot(fuv - vec3(0, 1, 0), randVec3(floor(uv) + vec3(0, 1, 0), seed));
+    float c4 = dot(fuv - vec3(0, 1, 1), randVec3(floor(uv) + vec3(0, 1, 1), seed));
+    float c5 = dot(fuv - vec3(1, 0, 0), randVec3(floor(uv) + vec3(1, 0, 0), seed));
+    float c6 = dot(fuv - vec3(1, 0, 1), randVec3(floor(uv) + vec3(1, 0, 1), seed));
+    float c7 = dot(fuv - vec3(1, 1, 0), randVec3(floor(uv) + vec3(1, 1, 0), seed));
+    float c8 = dot(fuv - vec3(1, 1, 1), randVec3(floor(uv) + vec3(1, 1, 1), seed));
+    return (
+            lerp(
+        		lerp(
+            		lerp(c1, c2, fuv.z), 
+                    lerp(c3, c4, fuv.z), 
+                    fuv.y), 
+                lerp(
+                    lerp(c5, c6, fuv.z), 
+                    lerp(c7, c8, fuv.z), 
+                    fuv.y), 
+                fuv.x)
+           );
+}
+
+float layeredPerlin3D(vec3 uv, int layerNumber, float fade, float frequencyShift, int seed) {
+    float weight = 1.;
+    float frequency = 1.;
+    float result = 0.;
+    int layer_seed = seed;
+    float final_range = 0.;
+    for (int i = 0; i < layerNumber; i++) {
+        result += perlin3D(uv/frequency, layer_seed) * fade;
+        final_range += fade;
+        weight *= fade;
+        frequency *= frequencyShift;
+    	layer_seed = rand3(uv, layer_seed);
+    }
+    return result/final_range;
+}
+
+float pNoise(vec2 uv, float f, float time) {
+	vec3 tuv = vec3(uv, (time + 20.0) * f);
+    return layeredPerlin3D(tuv, 8, 2., 2., 4);
+}
+
+float tentacles(vec2 uv, float baseIntensity) {
+    
+    if (baseIntensity < .5)
+        return 0.0;
+
+    vec2 polar = vec2(
+        length(uv),
+        atan(uv.x, uv.y)
+    );
+    
+    // Remap angle to [0, 1]
+    polar.y = .5 + .5 * polar.y/PI;
+    
+    // Repeat tentacleCount times
+    float id;
+    polar.y = modf(polar.y * tentacleCount, id);
+    
+    polar.y = (polar.y + tentacleWiggle * pNoise(vec2(polar.x * 20.0, -id), 0.9, GameTime * 1000));
+    // Introduce symmetry
+    polar.y = 2. * abs(polar.y - .5);
+    
+    float tentacleStart = tentacleInOutA*pNoise(vec2(id, 20.0), tentacleInOutF, GameTime * 1000) + 1.0 / (tentacleIntensity * baseIntensity);
+    
+    tentacleStart = max(tentacleStart + tentacleLimit*.7, tentacleLimit);
+
+    // b describes the tentacle color intensity, but I named it that b cuz I like that letter more
+    float b = 1. - polar.y - 0.2*tentacleStart / polar.x;
+    
+    b = clamp(b, 0.0, 1.0);
+    
+    b = pow(b, 10.0);
+    
+    return step(.5, smoothstep(.005, 0.01, b));
+}
 
 vec4 sampleStain(vec4 inColor, vec4 col, vec2 stp, vec2 pos) {
     vec2 lUV = gl_FragCoord.xy / ScreenSize;
@@ -204,15 +313,30 @@ void main() {
             break;
             case 7:
             {
-                vec2 uv = centerUV / vec2(Ratio, 1);
                 color = vec4(0);
+                vec2 uv = gl_FragCoord.xy / ScreenSize -0.5;
 
-                float radius = length(uv);
+                float baseIntensity = 0.0;
+                //baseIntensity = sin(fract(GameTime * 300) * PI);
+                float tentacleIntensity = (((baseIntensity + sin(fract(GameTime * 200) * PI) / 3) * 0.8) + 0.2) * 7.5; // 요기 수치 조정
 
-                if (radius >= 0.05 && radius < 0.08 && vertexColor.a >= 0.99)
-                {
-                    float angle = fract(-atan(uv.y, uv.x) / PI * 0.5 + 0.5 - GameTime * 1000);
-                    color = vec4(1, 1, 1, angle);
+                if(color.a > 1) { color.a = 1; }
+
+                color.rgb = vec3(tentacles(uv, tentacleIntensity));
+                color *= clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 15), 0.0, 1.0);
+
+                float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 30), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
+                float baseAlpha = baseIntensity * 5;
+                if(baseAlpha > 1) { baseAlpha = 1.0; }
+
+                color.a = sideAplha * sideAplha;
+                color.a *= baseAlpha;
+
+                if(color.r > 0.2) {
+                    color.a *= 1.25;
+                    color.r = 0;
+                    color.g = 0;
+                    color.b = 0;
                 }
             }
             break;
