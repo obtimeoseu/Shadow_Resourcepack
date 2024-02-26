@@ -12,5 +12,12 @@ in vec4 vertexColor;
 out vec4 fragColor;
 
 void main() {
-    fragColor = vertexColor * ColorModulator * linear_fog_fade(vertexDistance, FogStart, FogEnd);
+    vec4 color = vertexColor;
+    if(color.r > color.g) {
+        color.r = color.g;
+        color.b /= 2;
+        color.r /= 2;
+    }
+    color *= ColorModulator * linear_fog_fade(vertexDistance, FogStart, FogEnd);
+    fragColor = color;
 }

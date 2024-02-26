@@ -10,10 +10,11 @@ in vec4 normal;
 
 out vec4 fragColor;
 
+// enderdragon death
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
     if (color.a < vertexColor.a) {
-        discard;
     }
+        discard;
     fragColor = color;
 }

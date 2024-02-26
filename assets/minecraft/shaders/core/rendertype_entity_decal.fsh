@@ -17,11 +17,12 @@ in vec4 normal;
 
 out vec4 fragColor;
 
+// enderdragon death
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
     if (color.a < 0.1) {
-        discard;
     }
+        discard;
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
     color *= vertexColor * ColorModulator;
     fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
