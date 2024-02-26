@@ -14,7 +14,7 @@ void main() {
         //color.r = 0.1;
         //color.g = 0.1;
         //color.b = 0.1;
-        color.a = 1;
+        //color.a = 1;
         color *= vec4(1.0, 0.0, 0.0, 1.0);
     } else  {
         color *= ColorModulator;
