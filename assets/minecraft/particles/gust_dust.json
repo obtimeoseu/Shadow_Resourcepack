@@ -1,6 +1,8 @@
 {
   "textures": [
     "shadow:shadow_lump_0",
-    "shadow:shadow_lump_1"
+    "shadow:shadow_lump_1",
+    "shadow:shadow_lump_2",
+    "shadow:shadow_lump_3"
   ]
 }
