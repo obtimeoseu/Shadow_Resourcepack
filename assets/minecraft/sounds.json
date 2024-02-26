@@ -9267,92 +9267,151 @@
     "sounds": [
       {
         "name": "block/sculk_vein/break1",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break2",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break3",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break4",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break5",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       }
     ],
+    "replace": true,
     "subtitle": "subtitles.block.generic.break"
   },
   "block.sculk_vein.fall": {
     "sounds": [
-      "block/sculk/step1",
-      "block/sculk/step2",
-      "block/sculk/step3",
-      "block/sculk/step4",
-      "block/sculk/step5",
-      "block/sculk/step6"
-    ]
+      {
+        "name": "block/sculk/step1",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step2",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step3",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step4",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step5",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step6",
+        "pitch": 0.5
+      }
+    ],
+    "replace": true
   },
   "block.sculk_vein.hit": {
     "sounds": [
-      "block/sculk/step1",
-      "block/sculk/step2",
-      "block/sculk/step3",
-      "block/sculk/step4",
-      "block/sculk/step5",
-      "block/sculk/step6"
+      {
+        "name": "block/sculk/step1",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step2",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step3",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step4",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step5",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step6",
+        "pitch": 0.5
+      }
     ],
+    "replace": true,
     "subtitle": "subtitles.block.generic.hit"
   },
   "block.sculk_vein.place": {
     "sounds": [
       {
         "name": "block/sculk_vein/break1",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break2",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break3",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break4",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       },
       {
         "name": "block/sculk_vein/break5",
-        "pitch": 1.1,
+        "pitch": 0.6,
         "volume": 0.8
       }
     ],
+    "replace": true,
     "subtitle": "subtitles.block.generic.place"
   },
   "block.sculk_vein.step": {
     "sounds": [
-      "block/sculk/step1",
-      "block/sculk/step2",
-      "block/sculk/step3",
-      "block/sculk/step4",
-      "block/sculk/step5",
-      "block/sculk/step6"
+      {
+        "name": "block/sculk/step1",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step2",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step3",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step4",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step5",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/sculk/step6",
+        "pitch": 0.5
+      }
     ],
+    "replace": true,
     "subtitle": "subtitles.block.generic.footsteps"
   },
   "block.shroomlight.break": {
