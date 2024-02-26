@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "attached=false,east=true,north=true,south=true,west=true": {
-      "model": "shadow:block/shadow_vein"
-    }
-  }
-}
