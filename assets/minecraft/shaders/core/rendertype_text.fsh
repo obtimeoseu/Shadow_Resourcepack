@@ -80,7 +80,7 @@ struct TextData {
 };
 
 const float tentacleIntensity = 0.275;
-const float tentacleCount = 10.;
+const float tentacleCount = 16.;
 const float tentacleWiggle = 0.5;
 const float tentacleInOutA = 1.0;
 const float tentacleInOutF = 1.5;
@@ -157,7 +157,7 @@ float pNoise(vec2 uv, float f, float time) {
     return layeredPerlin3D(tuv, 8, 2., 2., 4);
 }
 
-float tentacles(vec2 uv, float baseIntensity) {
+float tentacles(vec2 uv, float baseIntensity, float count) {
     
     if (baseIntensity < .5)
         return 0.0;
@@ -172,7 +172,7 @@ float tentacles(vec2 uv, float baseIntensity) {
     
     // Repeat tentacleCount times
     float id;
-    polar.y = modf(polar.y * tentacleCount, id);
+    polar.y = modf(polar.y * count, id);
     
     polar.y = (polar.y + tentacleWiggle * pNoise(vec2(polar.x * 20.0, -id), 0.9, GameTime * 1000));
     // Introduce symmetry
@@ -321,10 +321,16 @@ void main() {
                 float tentacleIntensity = (((baseIntensity + sin(fract(GameTime * 200) * PI) / 3) * 0.8) + 0.2) * 7.5; // 요기 수치 조정
 
                 if(color.a > 1) { color.a = 1; }
+                color.a = 1;
+                //color.rgb = vec3(1.0);
 
-                color.rgb = vec3(tentacles(uv, tentacleIntensity));
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.5, 5));
+
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.7, 7));
+                
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.9, 9));
                 color *= clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 15), 0.0, 1.0);
-
+                
                 float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 30), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
                 float baseAlpha = baseIntensity * 5;
                 if(baseAlpha > 1) { baseAlpha = 1.0; }
@@ -338,6 +344,7 @@ void main() {
                     color.g = 0;
                     color.b = 0;
                 }
+                
             }
             break;
             case 8:
