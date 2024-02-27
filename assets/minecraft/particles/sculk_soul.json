@@ -1,16 +1,12 @@
 {
   "textures": [
-    "shadow:flame_0",
-    "shadow:flame_1",
-    "shadow:flame_2",
-    "shadow:flame_3",
-    "shadow:flame_4",
-    "shadow:flame_5",
-    "shadow:flame_0",
-    "shadow:flame_1",
-    "shadow:flame_2",
-    "shadow:flame_3",
-    "shadow:flame_4",
-    "shadow:flame_5"
+    "shadow:red_flame_0",
+    "shadow:red_flame_1",
+    "shadow:red_flame_2",
+    "shadow:red_flame_3",
+    "shadow:red_flame_4",
+    "shadow:red_flame_5",
+    "shadow:red_flame_6",
+    "shadow:red_flame_7"
   ]
 }
