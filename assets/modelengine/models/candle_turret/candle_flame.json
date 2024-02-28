@@ -1,0 +1,1 @@
+{"textures":{"1":"shadow:entity/candle_golem_candle_flame_animation"},"elements":[{"from":[-2.0,7.0,8.0],"to":[18.0,27.0,8.0],"faces":{"south":{"uv":[13.0,2.0,3.0,12.0],"tintindex":0,"rotation":0,"texture":"#1"},"north":{"uv":[3.0,2.0,13.0,12.0],"tintindex":0,"rotation":0,"texture":"#1"}}}],"display":{"gui":{"rotation":[30,225,0]}}}

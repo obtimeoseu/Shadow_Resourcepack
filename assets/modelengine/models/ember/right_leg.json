@@ -1,0 +1,1 @@
+{"textures":{"0":"shadow:entity/ember"},"elements":[{"from":[7.5,6.0,8.0],"to":[8.5,8.0,8.0],"faces":{"south":{"uv":[3.0,10.0,4.0,12.0],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[2.0,10.0,3.0,12.0],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[30,225,0]}}}
