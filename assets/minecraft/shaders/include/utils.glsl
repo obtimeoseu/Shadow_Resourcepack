@@ -448,6 +448,10 @@ vec4 showRedAndGray(vec4 color, vec4 fogColor, int isGui) {
 			if(fogColor.r * 255 < 3) {
 				//color.rgb = vec3(gray);
 				//return color;
+			} else
+			if(fogColor.r * 255 < 4) {
+				//color.rgb = vec3(gray);
+				//return color;
 			} else {
 				return color;
 			}
@@ -483,6 +487,10 @@ vec3 showRedAndGray(vec3 color, vec4 fogColor, int isGui) {
 				//return color;
 			} else
 			if(fogColor.r * 255 < 3) {
+				//color.rgb = vec3(gray);
+				//return color;
+			} else
+			if(fogColor.r * 255 < 4) {
 				//color.rgb = vec3(gray);
 				//return color;
 			} else {
