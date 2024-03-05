@@ -16,6 +16,8 @@
         { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"},
 
-        { "predicate": { "custom_model_data": 2000}, "model": "shadow:block/test_block"}
+        { "predicate": { "custom_model_data": 2000}, "model": "shadow:block/test_block_0"},
+        { "predicate": { "custom_model_data": 2001}, "model": "shadow:block/test_block_1"},
+        { "predicate": { "custom_model_data": 2002}, "model": "shadow:entity/dimension_eye"}      
 	]
 }
