@@ -332,11 +332,11 @@ void main() {
                 color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.9, 9));
                 color *= clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 15), 0.0, 1.0);
                 
-                float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 20) - 0.05, 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
-                float baseAlpha = baseIntensity * 5;
+                float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 20), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
+                float baseAlpha = baseIntensity * 3;
                 if(baseAlpha > 1) { baseAlpha = 1.0; }
 
-                color.a = sideAplha * sideAplha;
+                color.a = pow(sideAplha, 1);// * sideAplha;
                 color.a *= baseAlpha;
 
                 if(color.r > 0.2) {
