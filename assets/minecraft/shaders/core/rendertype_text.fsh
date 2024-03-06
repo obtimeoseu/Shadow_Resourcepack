@@ -317,6 +317,7 @@ void main() {
                 vec2 uv = gl_FragCoord.xy / ScreenSize -0.5;
 
                 float baseIntensity = vertexColor.b - 0.25;
+                baseIntensity *= 1.2;
                 if(baseIntensity < 0) { baseIntensity = 0; }
                 //baseIntensity = sin(fract(GameTime * 300) * PI);
                 float tentacleIntensity = (((baseIntensity + sin(fract(GameTime * 200) * PI) / 3) * 0.8) + 0.2) * 7.5; // 요기 수치 조정
