@@ -337,7 +337,7 @@ void main() {
                 float baseAlpha = baseIntensity * 3;
                 if(baseAlpha > 1) { baseAlpha = 1.0; }
 
-                color.a = pow(sideAplha, 1);// * sideAplha;
+                color.a = pow(sideAplha, 1) * 1.05;// * sideAplha;
                 color.a *= baseAlpha;
 
                 if(color.r > 0.2) {
