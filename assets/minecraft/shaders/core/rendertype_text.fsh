@@ -316,7 +316,8 @@ void main() {
                 color = vec4(0);
                 vec2 uv = gl_FragCoord.xy / ScreenSize -0.5;
 
-                float baseIntensity = 0.0;
+                float baseIntensity = vertexColor.b - 0.25;
+                if(baseIntensity < 0) { baseIntensity = 0; }
                 //baseIntensity = sin(fract(GameTime * 300) * PI);
                 float tentacleIntensity = (((baseIntensity + sin(fract(GameTime * 200) * PI) / 3) * 0.8) + 0.2) * 7.5; // 요기 수치 조정
 
@@ -331,7 +332,7 @@ void main() {
                 color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.9, 9));
                 color *= clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 15), 0.0, 1.0);
                 
-                float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 30), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
+                float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 20), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
                 float baseAlpha = baseIntensity * 5;
                 if(baseAlpha > 1) { baseAlpha = 1.0; }
 
