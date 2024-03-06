@@ -326,11 +326,11 @@ void main() {
                 color.a = 1;
                 //color.rgb = vec3(1.0);
 
-                color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.9, 5));
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 0.8, 5));
 
-                color.rgb += vec3(tentacles(uv, tentacleIntensity * 1.2, 7));
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 1.1, 7));
                 
-                color.rgb += vec3(tentacles(uv, tentacleIntensity * 1.4, 9));
+                color.rgb += vec3(tentacles(uv, tentacleIntensity * 1.3, 9));
                 color *= clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 15), 0.0, 1.0);
                 
                 float sideAplha = clamp(length(gl_FragCoord.xy / ScreenSize - 0.5) / (1 - tentacleIntensity / 20), 0.0, 1.0); // 30 줄이면 구석 덜 어두워짐
