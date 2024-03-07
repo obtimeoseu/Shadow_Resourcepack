@@ -1,0 +1,7 @@
+{
+	"credit": "옵티머스",
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "shadow:item/candle_sword"
+  }
+}
