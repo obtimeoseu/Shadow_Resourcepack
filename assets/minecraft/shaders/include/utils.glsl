@@ -317,15 +317,13 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			}
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과 빨강
-		remappingColor.a = 1.0;
-		remappingColor.rgb = vec3(0, 0, 0);
-		for (int i = 6; i < 16; i++) {
-			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
-			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
-			remappingColor.rgb += (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP_COLORS[i]);
+	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과 빨강		if(isGui == 1) {
+			remappingColor = inputColor * tintColor;
+			remappingColor.a = 1.0;
+		} else {
+			remappingColor = inputColor * tintColor;
+			remappingColor.a = 1.0;
 		}
-		//remappingColor *= vertexColor * vertexColor * lightColor;
 	} else
 	if(adjacentCheck(inputAlpha, 242.0)) { // 그림자 제거 (fsh 에서 제거중)
 
@@ -368,13 +366,23 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			if(remappingColor.a > 1.0) remappingColor.a = 1.0;
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 237.0)) { // 엔드 포탈 효과 빨강
+	if(adjacentCheck(inputAlpha, 237.0)) { // 엔드 포탈 효과 하늘
 		remappingColor.a = 1.0;
 		remappingColor.rgb =  vec3(1, 1, 1);
 		for (int i = 6; i < 16; i++) {
 			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
 			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
 			remappingColor.rgb -= (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP2_COLORS[i]);
+		}
+		//remappingColor *= vertexColor * vertexColor * lightColor;
+	} else
+	if(adjacentCheck(inputAlpha, 236.0)) { // 엔드 포탈 효과 빨강
+		remappingColor.a = 1.0;
+		remappingColor.rgb = vec3(0, 0, 0);
+		for (int i = 6; i < 16; i++) {
+			vec4 proj = vec4(screenFragCoord.xy/screenSize, 0, 1) * end_portal_layer(float(i + 1), gameTime);
+			float pixel = hash12(floor(fract(proj.xy/proj.w)*256.0));
+			remappingColor.rgb += (step(0.95, pixel)* 0.2 + step(0.99, pixel) * 0.8) * (EP_COLORS[i]);
 		}
 		//remappingColor *= vertexColor * vertexColor * lightColor;
 	} else
