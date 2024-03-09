@@ -332,7 +332,7 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 	if(adjacentCheck(inputAlpha, 241.0)) { // 그림자 제거 (fsh 에서 제거중) + 발광
 		if(isGui == 1) {
 			remappingColor = inputColor * tintColor;
-			remappingColor.a = 0.0;
+			remappingColor.a = 1.0;
 		} else {
 			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
