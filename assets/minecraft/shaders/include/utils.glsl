@@ -317,9 +317,10 @@ vec4 apply_emissive_perspective_for_item(vec4 inputColor, vec4 lightColor, vec4 
 			}
 		}
 	} else
-	if(adjacentCheck(inputAlpha, 243.0)) { // 엔드 포탈 효과 빨강		if(isGui == 1) {
+	if(adjacentCheck(inputAlpha, 243.0)) { // 그림자 제거 (fsh 에서 제거중) + 발광 + GUI X
+		if(isGui == 1) {
 			remappingColor = inputColor * tintColor;
-			remappingColor.a = 1.0;
+			remappingColor.a = 0.0;
 		} else {
 			remappingColor = inputColor * tintColor;
 			remappingColor.a = 1.0;
