@@ -5,7 +5,7 @@
 	},
 	"overrides": [
         { "predicate": { "custom_model_data": 1000}, "model": "shadow:item/flame"},
-        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:item/glow_stick"},
         { "predicate": { "custom_model_data": 1002}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1003}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/"},
