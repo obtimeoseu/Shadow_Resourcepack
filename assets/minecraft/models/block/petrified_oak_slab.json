@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "shadow:block/candle_block_bottom",
-    "side": "shadow:block/candle_block_side",
-    "top": "shadow:block/candle_block_top"
-  }
-}
