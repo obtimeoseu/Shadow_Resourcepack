@@ -32,6 +32,11 @@ out vec2 texCoord1;
 out vec4 normal;
 out float part;
 
+out float zPos;
+flat out int isGui;
+out vec4 tintColor;
+out vec4 screenPos;
+
 #define SPACING 1024.0
 #define MAXRANGE (0.5 * SPACING)
 
@@ -79,8 +84,19 @@ const vec2[] origins = vec2[](
 );
 
 void main() {
+	zPos = Position.z;
+	isGui = 0;
+	if(abs(ProjMat[3][3] - 1.0) < 0.01) {
+		if(zPos > 125.0) {
+			isGui = 1; // 일반 gui
+		} else {
+			isGui = 2; // gui doll
+		}
+	}
+	tintColor = Color;
+
 	vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, normalize(Normal), Color);
-	lightMapColor = texelFetch(Sampler2, UV2 / 16, 0);
+	lightMapColor = getDarkerLight(texelFetch(Sampler2, UV2 / 16, 0), isGui);
 	overlayColor = texelFetch(Sampler1, UV1, 0);
 	normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 
@@ -92,6 +108,7 @@ void main() {
 		texCoord1 = vec2(0.0);
 		vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
 		gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    screenPos = gl_Position;
 	}
 	else {
 		vec3 wpos = IViewRotMat * Position;
@@ -103,6 +120,7 @@ void main() {
 
 		if (partId == 0) { // higher precision position if no translation is needed
 			gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    	screenPos = gl_Position;
 		}
 		else {
 			// vec4 samp1 = texture(Sampler0, vec2(54.0 / 64.0, 20.0 / 64.0));
@@ -190,6 +208,11 @@ void main() {
 
 			wpos.y += SPACING * partId;
 			gl_Position = ProjMat * ModelViewMat * vec4(inverse(IViewRotMat) * wpos, 1.0);
+    	screenPos = gl_Position;
+
+			//if(tintColor.rgb == vec3(255, 255, 254) / 255.0) {
+				//gl_Position.z = 0 + gl_Position.z * 0.001;
+			//}
 
 			UVout = origins[2 * (partId - 1) + outerLayer];
 			UVout2 = origins[2 * (partId - 1)];
