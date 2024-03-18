@@ -1,5 +1,8 @@
 {
   "textures": [
-    "shadow:beacon_charge"
+    "shadow:beacon_charge_0",
+    "shadow:beacon_charge_1",
+    "shadow:beacon_charge_2",
+    "shadow:beacon_charge_3"
   ]
 }
