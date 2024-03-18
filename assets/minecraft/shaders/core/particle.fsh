@@ -57,4 +57,8 @@ void main() {
     }
 
     fragColor = linear_fog(color, vertexDistance, fogStart, fogEnd, FogColor);
+    
+    if(compareColor(texture(Sampler0, texCoord0).rgb, vec3(254, 254, 254) / 255.0)) {
+        fragColor = texture(Sampler0, texCoord0);
+    }
 }
