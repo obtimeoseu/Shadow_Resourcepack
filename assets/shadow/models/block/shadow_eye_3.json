@@ -2,20 +2,20 @@
 	"credit": "옵티머스",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "shadow:block/shadow_eye_2",
-		"particle": "shadow:block/shadow_eye_2"
+		"0": "shadow:block/shadow_eye_3",
+		"particle": "shadow:block/shadow_eye_3"
 	},
 	"elements": [
 		{
-			"from": [0, 0, 0],
-			"to": [16, 6, 16],
+			"from": [-2, 0, -2],
+			"to": [18, 8, 18],
 			"faces": {
-				"north": {"uv": [2, 2, 4, 2.75], "texture": "#0"},
-				"east": {"uv": [0, 2, 2, 2.75], "texture": "#0"},
-				"south": {"uv": [6, 2, 8, 2.75], "texture": "#0"},
-				"west": {"uv": [4, 2, 6, 2.75], "texture": "#0"},
-				"up": {"uv": [4, 2, 2, 0], "texture": "#0"},
-				"down": {"uv": [6, 0, 4, 2], "texture": "#0"}
+				"north": {"uv": [2.5, 2.5, 5, 3.5], "texture": "#0"},
+				"east": {"uv": [0, 2.5, 2.5, 3.5], "texture": "#0"},
+				"south": {"uv": [7.5, 2.5, 10, 3.5], "texture": "#0"},
+				"west": {"uv": [5, 2.5, 7.5, 3.5], "texture": "#0"},
+				"up": {"uv": [5, 2.5, 2.5, 0], "texture": "#0"},
+				"down": {"uv": [7.5, 0, 5, 2.5], "texture": "#0"}
 			}
 		}
 	],
