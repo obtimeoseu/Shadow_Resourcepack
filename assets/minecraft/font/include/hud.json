@@ -189,6 +189,16 @@
             "chars": [
                 "\u0000\u0000\u0000\uf510\uf511\uf512\uf513\uf514\uf515\uf516\uf517\uf518\uf519\uf51a\uf51b\uf51c\uf51d\uf51e\uf51f\uf520\uf521\uf522\uf523\uf524\uf525\uf526\uf527\uf528\uf529\uf52a\uf52b\uf52c\uf52d\uf52e\uf52f\uf530\uf531\uf532\uf533\uf534\uf535\uf536\uf537\uf538\uf539\uf53a\uf53b\uf53c\uf53d\uf53e\uf53f\uf540\uf541\uf542\uf543\uf544\uf545\uf546\uf547\uf548\uf549\uf54a\uf54b\uf54c\uf54d\uf54e\uf54f\uf550\uf551\uf552\uf553\uf554\uf555\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
             ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/walkie_talkie/player_head_1.png",
+            "ascent": -14,
+            "height": 10,
+            "chars": [
+                "\uf560"
+            ]
         }
+        
     ]
 }
