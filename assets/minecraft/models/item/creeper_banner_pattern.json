@@ -1,0 +1,19 @@
+{
+    "parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "item/creeper_banner_pattern"
+	},
+	"overrides": [
+        { "predicate": { "custom_model_data": 1000}, "model": "shadow:block/shadow_eye_0"},
+        { "predicate": { "custom_model_data": 1001}, "model": "shadow:block/shadow_eye_1"},
+        { "predicate": { "custom_model_data": 1002}, "model": "shadow:block/shadow_eye_2"},
+        { "predicate": { "custom_model_data": 1003}, "model": "shadow:block/shadow_eye_3"},
+        { "predicate": { "custom_model_data": 1004}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1005}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1006}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1007}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1008}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
+        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"}
+	]
+}
