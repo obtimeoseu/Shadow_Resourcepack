@@ -14,6 +14,18 @@
         { "predicate": { "custom_model_data": 1007}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1008}, "model": "shadow:item/"},
         { "predicate": { "custom_model_data": 1009}, "model": "shadow:item/"},
-        { "predicate": { "custom_model_data": 1010}, "model": "shadow:item/"}
+
+        { "predicate": { "custom_model_data": 1010}, "model": "shadow:block/shadow_teeth_0"},
+        { "predicate": { "custom_model_data": 1011}, "model": "shadow:block/shadow_teeth_1"},
+        { "predicate": { "custom_model_data": 1012}, "model": "shadow:block/shadow_teeth_2"},
+        { "predicate": { "custom_model_data": 1013}, "model": "shadow:block/shadow_teeth_3"},
+        { "predicate": { "custom_model_data": 1014}, "model": "shadow:block/shadow_teeth_4"},
+        { "predicate": { "custom_model_data": 1015}, "model": "shadow:block/shadow_teeth_5"},
+        { "predicate": { "custom_model_data": 1016}, "model": "shadow:block/shadow_teeth_6"},
+        { "predicate": { "custom_model_data": 1017}, "model": "shadow:block/shadow_teeth_7"},
+        { "predicate": { "custom_model_data": 1018}, "model": "shadow:block/shadow_teeth_8"},
+        { "predicate": { "custom_model_data": 1019}, "model": "shadow:block/shadow_teeth_9"},
+        { "predicate": { "custom_model_data": 1020}, "model": "shadow:block/shadow_teeth_10"},
+        { "predicate": { "custom_model_data": 1021}, "model": "shadow:block/shadow_teeth_11"}
 	]
 }
