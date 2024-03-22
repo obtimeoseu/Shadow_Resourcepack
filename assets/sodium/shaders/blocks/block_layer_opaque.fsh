@@ -62,6 +62,53 @@ vec4 showRedAndGray(vec4 color, inout vec4 fogColor) {
     return color;
 }
 
+const vec3[] EP_COLORS = vec3[](
+    vec3(0.110818 * 3, 0.098399 / 3, 0.022087),
+    vec3(0.089485 * 3, 0.095924 / 3, 0.011892),
+    vec3(0.100326 * 3, 0.101689 / 3, 0.027636),
+    vec3(0.114838 * 3, 0.109883 / 3, 0.046564),
+    vec3(0.097189 * 3, 0.117696 / 3, 0.064901),
+    vec3(0.123646 * 3, 0.086895 / 3, 0.063761),
+    vec3(0.166380 * 3, 0.111994 / 3, 0.084817),
+    vec3(0.091064 * 3, 0.154120 / 3, 0.097489),
+    vec3(0.195191 * 3, 0.131144 / 3, 0.106152),
+    vec3(0.187229 * 3, 0.110188 / 3, 0.097721),
+    vec3(0.148582 * 3, 0.138278 / 3, 0.133516),
+    vec3(0.235792 * 3, 0.243332 / 3, 0.070006),
+    vec3(0.214696 * 3, 0.142899 / 3, 0.196766),
+    vec3(0.321970 * 3, 0.315338 / 3, 0.047281),
+    vec3(0.302066 * 3, 0.390010 / 3, 0.204675),
+    vec3(0.661491 * 3, 0.314821 / 3, 0.080955)
+);
+
+const mat4 EP_SCALE_TRANSLATE = mat4(
+    0.6, 0.0, 0.0, 0.25,
+    0.0, 0.6, 0.0, 0.25,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, 0.0, 1.0
+);
+
+mat2 mat2_rotate_z(float radians) {
+    return mat2(
+        cos(radians), -sin(radians),
+        sin(radians), cos(radians)
+    );
+}
+
+mat4 end_portal_layer(float layer, float gameTime) {
+    mat4 translate = mat4(
+        1.0, 0.0, 0.0, 17.0 / layer,
+        0.0, 1.0, 0.0, (2.0 + layer / 1.5) * (gameTime * 1.5),
+        0.0, 0.0, 1.0, 0.0,
+        0.0, 0.0, 0.0, 1.0
+    );
+
+    mat2 rotate = mat2_rotate_z(radians((layer * layer * 4321.0 + layer * 9.0) * 2.0));
+
+    mat2 scale = mat2((4.5 - layer / 4.0) * 2.0);
+
+    return mat4(scale * rotate) * translate * EP_SCALE_TRANSLATE;
+}
 
 void main() {
     vec4 fogColor = u_FogColor;

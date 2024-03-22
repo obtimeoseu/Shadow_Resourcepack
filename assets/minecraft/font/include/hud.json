@@ -192,11 +192,74 @@
         },
         {
             "type": "bitmap",
-            "file": "shadow:gui/hud/walkie_talkie/player_head_1.png",
-            "ascent": -14,
-            "height": 10,
+            "file": "shadow:gui/hud/cpr/shift_button.png",
+            "ascent": 18,
+            "height": 32,
             "chars": [
-                "\uf560"
+                "\uf560\uf561"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/vital_sign_bar.png",
+            "ascent": 0,
+            "height": 16,
+            "chars": [
+                "\uf562"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/vital_sign.png",
+            "ascent": 0,
+            "height": 16,
+            "chars": [
+                "\uf563\uf564"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/note_button.png",
+            "ascent": 0,
+            "height": 16,
+            "chars": [
+                "\uf565\uf566"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/heart.png",
+            "ascent": 0,
+            "height": 16,
+            "chars": [
+                "\uf567\uf568\uf569\uf56a"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/player_head_0.png",
+            "ascent": 18,
+            "height": 32,
+            "chars": [
+                "\uf570\uf571\uf572\uf573\uf574\uf575\uf576\uf577"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/player_head_1.png",
+            "ascent": 18,
+            "height": 32,
+            "chars": [
+                "\uf578\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "shadow:gui/hud/cpr/player_head_2.png",
+            "ascent": 18,
+            "height": 32,
+            "chars": [
+                "\uf580\uf581\uf582\uf583\uf584\uf585\uf586\uf587"
             ]
         }
         

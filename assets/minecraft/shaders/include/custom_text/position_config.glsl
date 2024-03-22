@@ -38,6 +38,20 @@ TEXT_POSITION_CASE(232) {
     textData.position.x -= 96;
     textData.position.y += 34;
 }
+TEXT_POSITION_CASE(228) { // CPR
+    textData.position.x -= floor(textData.scrSize.x / 2);
+    textData.position.y += floor(textData.scrSize.y / 2);
+    
+    textData.position.x -= 66;
+    textData.position.y -= 100;
+}
+TEXT_POSITION_CASE(224) { // 워키토키
+    //textData.position.x -= floor(textData.scrSize.x / 2);
+    //textData.position.y += floor(textData.scrSize.y / 2);
+    
+    //textData.position.x -= 96;
+    //textData.position.y -= 80;
+}
 
 TEXT_POSITION_CASE(220) {
     textData.position.y += 10;
