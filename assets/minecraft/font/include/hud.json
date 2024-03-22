@@ -201,7 +201,7 @@
         },
         {
             "type": "bitmap",
-            "file": "shadow:gui/hud/cpr/vital_sign_bar.png",
+            "file": "shadow:gui/hud/cpr/vital_bar.png",
             "ascent": 0,
             "height": 16,
             "chars": [
@@ -210,29 +210,29 @@
         },
         {
             "type": "bitmap",
-            "file": "shadow:gui/hud/cpr/vital_sign.png",
+            "file": "shadow:gui/hud/cpr/vital_pulse.png",
             "ascent": 0,
             "height": 16,
             "chars": [
-                "\uf563\uf564"
+                "\uf563"
             ]
         },
         {
             "type": "bitmap",
             "file": "shadow:gui/hud/cpr/note_button.png",
-            "ascent": 0,
-            "height": 16,
+            "ascent": 18,
+            "height": 32,
             "chars": [
-                "\uf565\uf566"
+                "\uf564\uf565"
             ]
         },
         {
             "type": "bitmap",
             "file": "shadow:gui/hud/cpr/heart.png",
-            "ascent": 0,
+            "ascent": 9,
             "height": 16,
             "chars": [
-                "\uf567\uf568\uf569\uf56a"
+                "\uf566\uf567\uf568\uf569"
             ]
         },
         {
